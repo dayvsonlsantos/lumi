@@ -1,8 +1,8 @@
-import styles from "./Header.module.css";
+import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BiSearchAlt } from "react-icons/bi";
-import { Toggle } from "./Toggle";
+import { Toggle } from "../Toggle/Toggle";
 
 const Search = styled.div`
   display: flex;
