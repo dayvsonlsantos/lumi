@@ -1,5 +1,16 @@
 @charset "utf-8";
 
+$lightPurple: #7f75ff;
+$darkPurple: #564aff;
+$standardSpace: 1rem;
+$standardRadius: 12px;
+
+//Alteração do tamanho dos SVGs da navbar
+
+svg {
+  font-size: 1.3em;
+}
+
 .header {
   display: flex;
   width: 100%;
@@ -19,17 +30,17 @@
   justify-content: space-between;
   margin-left: 4rem;
   margin-right: 4rem;
-}
 
-.icon {
-  display: flex;
-  align-items: center;
-}
+  .logo {
+    display: flex;
+    align-items: center;
 
-.icon a img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 .center {
@@ -41,24 +52,20 @@
   flex-direction: row;
   margin-left: 4rem;
   margin-right: 4rem;
-}
 
-.darkmode {
-  display: flex;
-  align-items: center;
-  margin-right: 1rem;
-}
+  .changeModeDiv {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
 
-.darkmode button {
-  border: none;
-  display: flex;
-  align-items: center;
-  background-color: #ffffff00;
-  cursor: pointer;
-}
-
-svg {
-  font-size: 1.3em;
+    button {
+      border: none;
+      display: flex;
+      align-items: center;
+      background: none;
+      cursor: pointer;
+    }
+  }
 }
 
 /* Section right: Register & Login */
@@ -69,77 +76,65 @@ svg {
   height: 9vh;
   flex-direction: row;
   justify-content: center;
-}
 
-.right div {
-  margin-left: 35px;
-}
+  div {
+    margin-left: 35px;
+    display: flex;
+    align-items: center;
 
-.login {
-  display: flex;
-  align-items: center;
-}
+    button {
+      border: none;
+      border-radius: $standardRadius;
+      box-shadow: 0px 5px 10px #4242422b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      padding: 0.7em 1.4em;
+      cursor: pointer;
 
-.login button {
-  border: none;
-  background-color: #7f75ff;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+      a {
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        text-decoration: none;
+        color: white;
+        font-size: 1.2em;
+        font-weight: 400;
+      }
+    }
+  }
 
-.login button a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 6rem;
-  height: 3rem;
-  text-decoration: none;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 400;
-}
-.login button a:hover,
-.register button a:hover {
-  background-color: #acacac;
-  border-radius: 12px;
-  transition: 0.5s;
-}
+  div.login button {
+    background-color: $darkPurple;
 
-.register {
-  display: flex;
-  align-items: center;
-}
+    a {
+      justify-content: center;
+      width: 6rem;
+    }
 
-.register button {
-  border: none;
-  background-color: #564aff;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    :hover {
+      background-color: #ffffffa8;
+      border-radius: $standardRadius;
+      color: $lightPurple;
+      transition: 0.5s ease;
+    }
+  }
+  div.register button {
+    background-color: $darkPurple;
 
-.register button a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 8.6rem;
-  height: 3rem;
-  padding: 0 1rem;
-  text-decoration: none;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 400;
-}
-
-.register button img {
-  width: 1.3rem;
-}
-
-.box_shadow {
-  box-shadow: 0px 5px 10px #4242422b;
+    a {
+      justify-content: space-between;
+      width: 8.6rem;
+      padding: 0 1rem;
+    }
+    :hover {
+      background-color: #ffffffa8;
+      border-radius: $standardRadius;
+      color: $darkPurple;
+      transition: 0.5s ease;
+    }
+  }
 }
 
 @media screen and (max-width: 1600px) {
@@ -161,7 +156,7 @@ svg {
     justify-content: center;
   }
 
-  .header .center .darkmode {
+  .header .center .changeModeDiv {
     width: 10%;
     margin: 0;
     display: flex;
@@ -192,7 +187,7 @@ svg {
 }
 
 @media screen and (max-width: 900px) {
-  .header .center .darkmode {
+  .header .center .changeModeDiv {
     width: 20%;
   }
 

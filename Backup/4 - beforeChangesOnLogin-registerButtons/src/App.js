@@ -1,23 +1,29 @@
 import "./Styles/main.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/home/Home";
+import LoginModal from "./Components/LoginModal/LoginModal";
 import Navbar from "./Components/Navbar/Navbar";
 import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./themes/Themes.js";
 import { GlobalStyles } from "./GlocalStyles";
 //Importanto logo do tema Light para a variável.
-import logolight from "./Assets/logo/icon_lumi.svg";
+import logolight from "./Assets/logo/icon_lumi.svg"
 //Importanto logo do tema dark para a variável.
-import logodark from "./Assets/logo/icon_lumi_dark.svg";
-import Modal from "./Components/Modal/Modal";
+import logodark from "./Assets/logo/icon_lumi_dark.svg"
+
+
 
 function App() {
-  //Cores padrões nos modos light e dark, dos icones SVGs
+  const [theme, setTheme] = useState("light"); //Definindo tema padrão como light;
+
+  const [logo, setLogo] = useState(logolight); //Definindo logo padrão como a light;
 
   const lightPurple = { color: "#7F75FF" };
 
-  const darkPurple = { color: "#564AFF" };
+  const darkPurple = {
+    color: "#564AFF",
+  };
 
   const [svgColor, setSvgColor] = useState(darkPurple); //Definindo a cor padrão dos SVGs como Roxo Escuro;
 
@@ -34,8 +40,6 @@ function App() {
     localTheme ? setTheme(localTheme) : setMode("npmdark");
   }, []);
 
-  const [logo, setLogo] = useState(logolight); //Definindo logo padrão como a light;
-
   //Salvando o tema da logo da página ao recarregar:
 
   const setModeLogo = (modelogo) => {
@@ -50,61 +54,36 @@ function App() {
 
   //Função de alteração entre temas (light/dark), chamada no botão darkmode:
 
-  const [theme, setTheme] = useState("light"); //Definindo tema padrão como light;
-
   function themeToggler() {
     if (theme === "light") {
       setMode("npmdark"); //Alterando tema para a versão dark;
       setModeLogo(logodark); //Alterando logo para a versão dark;
-      setSvgColor(lightPurple); //Alterando cor dos SVGs para a versão light (Roxo claro);
+      setSvgColor(lightPurple); //Alterando cor dos SVGs para a versão dark (Roxo claro);
     } else {
       setMode("light"); //Alterando tema para a versão light;
       setModeLogo(logolight); //Alterando logo para a versão light;
-      setSvgColor(darkPurple); //Alterando cor dos SVGs para a versão dark (Roxo escuro);
+      setSvgColor(darkPurple); //Alterando cor dos SVGs para a versão light (Roxo escuro);
     }
-  }
-
-  //Fechar Login / Cadastro
-
-  const [isModalOpen, setModalOpen] = useState(false); //Estado inicial do modal, false, pois inicia-se fechado
-
-  //Função para abertura e fechamento do modal Login/Cad
-  function openModal() {
-    setModalOpen(true);
-  }
-
-  function closeModal() {
-    setModalOpen(false);
   }
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <Router>
-        {/* 
-        Enviando como prop: 
-          - Função(themeToggler)
-          - logo
-          - cor do svg 
-          - tema do botão (sol ou lua)
-          - Abrir modal de login/cad 
-        */}
-
+        {/* Enviando como prop: Função(themeToggler), logo, cor do svg */}
         <Navbar
           event={themeToggler}
           imgsrc={logo}
           svg_set_color={svgColor}
           themebutton={theme}
-          openModal={openModal}
         />
-
-        {/* 
-        Abertura do modal de login, passando prop para fechamento do modal 
-        */}
-
-        {isModalOpen ? <Modal closeModal={closeModal} /> : null}
+        {/*
+        <div className="backdrop">
+          <LoginModal/>
+        </div> */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LoginModal />} />
         </Routes>
       </Router>
     </ThemeProvider>

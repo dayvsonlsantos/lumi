@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+$lightPurple: #7f75ff;
+$darkPurple: #564aff;
+$standardSpace: 1rem;
+$standardRadius: 12px;
+
+//Alteração do tamanho dos SVGs da navbar
+
+svg {
+  font-size: 1.3em;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 9vh;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #acacaca1;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.left {
+  display: flex;
+  width: 25%;
+  height: 9vh;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 4rem;
+  margin-right: 4rem;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 9vh;
+  flex-direction: row;
+  margin-left: 4rem;
+  margin-right: 4rem;
+
+  .changeModeDiv {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding: 4px;
+
+    button {
+      border: none;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      background-color: #ffffff00;
+      cursor: pointer;
+    }
+    svg{
+      display: flex;
+      justify-content: center;
+      margin: auto;
+    }
+  }
+}
+
+/* Section right: Register & Login */
+
+.right {
+  display: flex;
+  width: 30%;
+  height: 9vh;
+  align-self: center;
+  justify-content: center;
+
+  div.login {
+    margin-left: 35px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+    button {
+      border: none;
+      border-radius: 100%;
+      background-color: #564aff00;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+
+      svg{
+        font-size: 1.8rem;
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .header .left {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .header .center {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .header .center .changeModeDiv {
+    width: 10%;
+    margin: 0;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+  }
+
+  .header .center .search {
+    width: 90%;
+    display: flex;
+    align-self: center;
+  }
+
+  .header .center .search input {
+    width: 70%;
+  }
+  .header .center .search button {
+    width: 30%;
+  }
+
+  .header .right {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header .center .changeModeDiv {
+    width: 20%;
+  }
+
+  .header .center .search {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1600px) {
+  .header .center .search {
+    width: 400px;
+  }
+  .header .center .search input {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .header .center .search input {
+    width: 90%;
+  }
+}
+
+@media screen and (max-height: 580px) {
+  .header {
+    height: 190px;
+  }
+  .header .left {
+    height: 50px;
+  }
+  .header .center {
+    height: 80px;
+  }
+  .header .right {
+    height: 80px;
+  }
+}

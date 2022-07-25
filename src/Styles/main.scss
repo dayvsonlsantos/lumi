@@ -26,108 +26,123 @@ $standardRadius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  .modal {
-    background-color: $darkPurple;
-    max-width: 50vw;
-    min-height: 50vh;
-    width: 100%;
-    border-radius: $standardRadius;
-    padding: 2.5 * $standardSpace;
+.modal {
+  form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
 
-    h1{
+    .header_form {
+      display: flex;
       margin-bottom: $standardSpace;
-      text-align: center;
-      color: #ffffff;
-      font-weight: 500;
-    }
-    form{
-      display:flex;
-      flex-direction: column;
-      width: 100%;
+      position: relative;
 
-      label{
+      h1 {
+        margin: auto;
         color: #ffffff;
+        font-weight: 500;
       }
 
-      input{
-        margin: $standardSpace 0;
-        border: none;
-        border-radius: $standardRadius;
-        padding: 0.8rem;
-        font-size: 0.9em;
-        color: #7d7d7d;
-
-        &:focus-visible{
-          outline: none;
-        }
-
-      }
-
-      button{
-        margin-bottom: 2*$standardSpace;
-        width: 8rem;
-        border-radius: $standardRadius;
-        border: none;
-        background-color: $lightPurple;
-        color: #e8f1f2;
-        padding: $standardSpace;
-        text-transform: uppercase;
-        font-weight: 400;
-        letter-spacing: 0.15rem;
-        cursor: pointer;
+      .close-modal-btn {
+        left: 90%;
+        position: absolute;
         display: flex;
         align-self: center;
-        justify-content: center;
+        border: none;
+        cursor: pointer;
+        background: none;
 
-        &:hover{
-          color: $lightPurple;
-          background-color: #ffffff;
-          transition: 0.5s ease; 
+        svg {
+          color: #ffffff;
+          font-size: 1.5rem;
         }
+      }
+    }
 
-      }
-      
-      p{
-        color: white;
-        text-align: center;
-        font-size: 0.9rem;
-      }
+    label {
+      color: #ffffff;
+    }
 
-      a{
-        text-decoration: none;
-        color: white;
-        text-align: center;
-        font-size: 0.8rem;
+    .input {
+      &:focus-visible {
+        outline: none;
       }
+    }
 
-      .esqueciasenha{
-        text-align: right;
-        margin-bottom: $standardSpace;
+    .esqueciasenha {
+      text-align: right;
+      margin-bottom: $standardSpace;
+    }
+
+    button.change-page-btn {
+      width: 8rem;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      border: none;
+      margin-top: $standardSpace;
+      border-radius: $standardRadius;
+      background: none;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      &:hover {
+        color: $lightPurple;
+        background-color: #ffffff;
+        transition: 0.5s ease;
       }
-      
+    }
+
+    p {
+      color: white;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      font-size: 0.8rem;
     }
   }
 }
 
+/* 
+
+Hide arrows from input (type = number) 
+Esconder setas do input (type = number)
+
+*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 @media only screen and (min-width: 900px) {
-  .backdrop .modal{
+  .backdrop .modal {
     width: 450px;
   }
 }
 
 @media only screen and (max-width: 900px) {
-  .backdrop .modal{
+  .backdrop .modal {
     min-width: 300px;
   }
 }
 
 @media only screen and (max-width: 300px) {
-  .backdrop .modal{
+  .backdrop .modal {
     min-width: 80%;
   }
 }

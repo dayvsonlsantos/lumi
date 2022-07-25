@@ -1,8 +1,9 @@
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BiSearchAlt } from "react-icons/bi";
 import { Toggle } from "../Toggle/Toggle";
+import {AiOutlineUser} from "react-icons/ai"
 
 const Search = styled.div`
   display: flex;
@@ -44,7 +45,7 @@ function Header({ event, imgsrc, svg_set_color, themebutton}) {
   return (
     <header className={styles.header}>
       <section className={styles.left}>
-        <div className={styles.icon}>
+        <div className={styles.logo}>
           <Link to="/">
             {/* Utilizando a logo recebida como prop (imgsrc) */}
             <img src={imgsrc} alt="logo do website Lumi" />
@@ -52,7 +53,7 @@ function Header({ event, imgsrc, svg_set_color, themebutton}) {
         </div>
       </section>
       <section className={styles.center}>
-        <div className={styles.darkmode}>
+        <div className={styles.changeModeDiv}>
           {/* Botão Darkmode | onClick, recebe prop (event) -> Ativando a função (themeToggler) do componente App.js */}
           <button>
             <Toggle theme={themebutton} toggleTheme={event}/>
@@ -66,14 +67,14 @@ function Header({ event, imgsrc, svg_set_color, themebutton}) {
       </section>
       <section className={styles.right}>
         <div className={styles.login}>
-          <button className={styles.box_shadow}>
+          <button>
             <a href="./Login.js">Login</a>
           </button>
         </div>
         <div className={styles.register}>
-          <button className={styles.box_shadow}>
+          <button>
             <a href="./Cadastro.js">
-              <img src="./assets/icon_register.svg" alt="Registro" />
+              <AiOutlineUser/>
               Cadastro
             </a>
           </button>

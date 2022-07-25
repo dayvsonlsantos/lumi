@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$backDrop: rgba(0, 0, 0, 0.2);
+$lightPurple: #7f75ff;
+$darkPurple: #564aff;
+$standardSpace: 1rem;
+$standardRadius: 12px;
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: $backDrop;
+
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal {
+    background-color: $darkPurple;
+    max-width: 50vw;
+    min-height: 50vh;
+    width: 100%;
+    border-radius: $standardRadius;
+    padding: 2.5 * $standardSpace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+      margin-bottom: $standardSpace;
+      text-align: center;
+      color: #ffffff;
+      font-weight: 500;
+    }
+    form{
+      display:flex;
+      flex-direction: column;
+      width: 100%;
+
+      label{
+        color: #ffffff;
+      }
+
+      input{
+        margin: $standardSpace 0;
+        border: none;
+        border-radius: $standardRadius;
+        padding: 0.8rem;
+        font-size: 0.9em;
+        color: #7d7d7d;
+
+        &:focus-visible{
+          outline: none;
+        }
+
+      }
+
+      .esqueciasenha{
+        text-align: right;
+        margin-bottom: $standardSpace;
+      }
+
+      button{
+        margin-bottom: 2*$standardSpace;
+        width: 8rem;
+        border-radius: $standardRadius;
+        border: none;
+        background-color: $lightPurple;
+        color: #e8f1f2;
+        padding: $standardSpace;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.15rem;
+        cursor: pointer;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+
+        &:hover{
+          color: $lightPurple;
+          background-color: #ffffff;
+          transition: 0.5s ease; 
+        }
+
+      }
+      
+      p{
+        color: white;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      a{
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        font-size: 0.8rem;
+      }
+      
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .backdrop .modal{
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .backdrop .modal{
+    min-width: 300px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .backdrop .modal{
+    min-width: 80%;
+  }
+}
