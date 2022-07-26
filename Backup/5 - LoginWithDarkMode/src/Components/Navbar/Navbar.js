@@ -17,7 +17,7 @@ const Search = styled.div`
   transition: all 0.5s ease;
 `;
 
-const InputNav = styled.input.attrs({
+const Input = styled.input.attrs({
   type: "search",
   name: "search",
   id: "search",
@@ -69,7 +69,7 @@ function Header({ event, imgsrc, svg_set_color, themebutton, openModal }) {
           */}
 
           <BiSearchAlt style={svg_set_color} />
-          <InputNav />
+          <Input />
         </Search>
       </section>
       <section className={styles.right}>

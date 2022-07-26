@@ -1,19 +1,9 @@
-import React, { useState } from "react";
 import "../../Styles/localStyles.scss";
 import { CgClose } from "react-icons/cg";
 import { ModalDiv, Input, Submit } from "../../themes/LocalStyles";
-import { Switch } from "../SwitchButton/Switch.js";
 
 function RegisterModal({ setLoginForm, closeModal }) {
-  const [switchOption, setSwitchOption] = useState(false);
 
-  function ChangeSwitch() {
-    if (switchOption === true) {
-      setSwitchOption(false);
-    } else {
-      setSwitchOption(true);
-    }
-  }
   return (
     <ModalDiv className="modal register_modal">
       <form>
@@ -87,10 +77,10 @@ function RegisterModal({ setLoginForm, closeModal }) {
             id="registerConf_Password"
             placeholder="Confirme a sua senha"
           />
-        </div>
 
-        <Switch ChangeSwitch={ChangeSwitch} switchOption={switchOption} />
-        {switchOption ? console.log(switchOption) : console.log(switchOption)}
+          
+
+        </div>
 
         <div className="bottom_register_form">
           <Submit className="submit-btn">Cadastrar</Submit>
@@ -99,6 +89,7 @@ function RegisterModal({ setLoginForm, closeModal }) {
             Login
           </button>
         </div>
+        
       </form>
     </ModalDiv>
   );

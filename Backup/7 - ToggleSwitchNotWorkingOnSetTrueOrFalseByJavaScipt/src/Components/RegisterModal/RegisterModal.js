@@ -7,10 +7,11 @@ import { Switch } from "../SwitchButton/Switch.js";
 function RegisterModal({ setLoginForm, closeModal }) {
   const [switchOption, setSwitchOption] = useState(false);
 
-  function ChangeSwitch() {
-    if (switchOption === true) {
+  function ChangeSwitch () {
+    
+    if(switchOption === true){
       setSwitchOption(false);
-    } else {
+    }else{
       setSwitchOption(true);
     }
   }
@@ -99,6 +100,7 @@ function RegisterModal({ setLoginForm, closeModal }) {
             Login
           </button>
         </div>
+        
       </form>
     </ModalDiv>
   );

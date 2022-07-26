@@ -1,4 +1,4 @@
-import styles from "./Navbar.module.scss";
+import styles from "./navbar.module.scss";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BiSearchAlt } from "react-icons/bi";

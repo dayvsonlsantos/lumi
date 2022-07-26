@@ -1,0 +1,89 @@
+/* 
+
+Toogle Button
+
+*/
+
+.switchToogle{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+    background-color: red;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #ccc;
+    transition: 0.4s ease;
+}
+
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s ease;
+}
+
+input:checked + .slider{
+    background-color: green;
+}
+
+input:checked + .slider:before{
+    transform: translateX(25px);
+}
+
+
+.toggle-input{
+    width: 3rem;
+    height: 1.5rem;
+    appearance: none;
+    background-color: #DAE2DF;
+    border-radius: 50px;
+    box-shadow: inset 0px 0px 16px 1px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+    
+    position: relative;
+}
+
+.toggle-input:checked{
+    background-color: #3DECB1;
+}
+
+.toggle-input:before{
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #EDF3F1;
+    border-radius: 50px;
+    position: absolute;
+    box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.24);;
+    transform: scale(1.1);
+    top: 0;
+    left: 0;
+    transition: .5s ease;
+}
+
+.toggle-input:checked:before{
+    left: 1.5rem;
+    transition: 0.5s ease;
+}
