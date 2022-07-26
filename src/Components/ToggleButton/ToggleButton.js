@@ -13,23 +13,13 @@ const InputToggle = styled.input`
   }
 `;
 
-export const ToggleButton = ({ ChangeToggleButton, toggleButtonOption }) => {
+export const ToggleButton = ({
+  toggleButtonOption,
+  ChangeToggleButton
+}) => {
   return toggleButtonOption ? (
-    <InputToggle
-      onClick={ChangeToggleButton}
-      className="toggle-input"
-      name="toggleButton"
-      id="toggleButton"
-      type="checkbox"
-      defaultChecked
-    />
+    <InputToggle onClick={ChangeToggleButton} defaultChecked />
   ) : (
-    <InputToggle
-      onClick={ChangeToggleButton}
-      className="toggle-input"
-      name="toggleButton"
-      id="toggleButton"
-      type="checkbox"
-    />
+    <InputToggle onClick={ChangeToggleButton} />
   );
 };

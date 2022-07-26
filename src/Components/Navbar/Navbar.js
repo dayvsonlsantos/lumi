@@ -78,7 +78,7 @@ function Header({ event, imgsrc, svg_set_color, themebutton, openModal }) {
         </div>
         <div className={styles.register}>
           <button>
-            <a href="./Cadastro.js">
+            <a href="#">
               <AiOutlineUser />
               Cadastro
             </a>

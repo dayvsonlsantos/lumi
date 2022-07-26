@@ -21,6 +21,19 @@ function App() {
 
   const [svgColor, setSvgColor] = useState(darkPurple); //Definindo a cor padrão dos SVGs como Roxo Escuro;
 
+  //Cores padrões do input e do seu value - Usaremos no model de registro;
+
+  const light_inputColor = "#F3F3F3"
+  const dark_inputColor = "#201B2C"
+
+  const light_inputValueColor = "#7D7D7D"
+  const dark_inputValueColor = "#ffffff"
+
+  //Definindo a cor padrão dos input e value como light:
+  const [inputColor, setInputColor] = useState(light_inputColor);
+  const [inputValueColor, setInputValueColor] = useState(light_inputValueColor);
+  
+
   //Salvando o tema da página ao recarregar:
   //Todo: completar explicação do código!!! link do video no telegram
 
@@ -57,10 +70,18 @@ function App() {
       setMode("npmdark"); //Alterando tema para a versão dark;
       setModeLogo(logodark); //Alterando logo para a versão dark;
       setSvgColor(lightPurple); //Alterando cor dos SVGs para a versão light (Roxo claro);
+
+      //Alterando a cor do input e value para dark:
+      setInputColor(dark_inputColor);
+      setInputValueColor(dark_inputValueColor);
     } else {
       setMode("light"); //Alterando tema para a versão light;
       setModeLogo(logolight); //Alterando logo para a versão light;
       setSvgColor(darkPurple); //Alterando cor dos SVGs para a versão dark (Roxo escuro);
+
+      //Alterando a cor do input e value para light:
+      setInputColor(light_inputColor);
+      setInputValueColor(light_inputValueColor);
     }
   }
 
@@ -102,7 +123,7 @@ function App() {
         Abertura do modal de login, passando prop para fechamento do modal 
         */}
 
-        {isModalOpen ? <Modal closeModal={closeModal} /> : null}
+        {isModalOpen ? <Modal closeModal={closeModal} inputColor={inputColor} inputValueColor={inputValueColor} /> : null}
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
