@@ -1,31 +1,47 @@
 import React, { useState } from "react";
+import RegisterModal from "./RegisterModal/RegisterModal";
+import LoginModal from "./LoginModal/LoginModal";
 
-import RegisterModal from "../RegisterModal/RegisterModal";
-import LoginModal from "../LoginModal/LoginModal";
+function Modal({ closeModalSign, inputValueColor, inputColor, openModalPass }) {
+  
 
-function Modal({ closeModal, inputValueColor, inputColor }) {
-  const [isLogin, setIsLogin] = useState(true);
+  //Abertura e fechamento entre os modals: RegisterModal e LoginModal
 
-  function setLoginForm() {
-    setIsLogin(true);
-  }
-  function setRegisterForm() {
-    setIsLogin(false);
-  }
+    const [isLogin, setIsLogin] = useState(true);
+
+    function setLoginForm() {
+      setIsLogin(true);
+    }
+    
+    function setRegisterForm() {
+      setIsLogin(false);
+    }
+
+    
+    
+
+  // --------------------------------------------------------------------
+
 
   return (
-    <div className="backdrop">
+    <div className="backdrop"> {/*localStyles.scss*/}
       {isLogin ? (
+       
         <LoginModal
           setRegisterForm={setRegisterForm}
-          closeModal={closeModal}
+          closeModalSign={closeModalSign}
+          openModalPass={openModalPass}
+
+          /*Alterar cor do input e seu valor*/
           inputValueColor={inputValueColor}
           inputColor={inputColor}
         />
       ) : (
         <RegisterModal
           setLoginForm={setLoginForm}
-          closeModal={closeModal}
+          closeModalSign={closeModalSign}
+
+          /*Alterar cor do input e seu valor*/
           inputValueColor={inputValueColor}
           inputColor={inputColor}
         />
@@ -35,3 +51,4 @@ function Modal({ closeModal, inputValueColor, inputColor }) {
 }
 
 export default Modal;
+

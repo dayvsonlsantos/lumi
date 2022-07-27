@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.formLoginInput {
+.inputFields {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -12,7 +12,7 @@ Span - errorMessage
 
 */
 
-span.spanfromForInput {
+span.span_inputFields {
   font-size: 0.8rem;
   background-color: #7f75ff;
   border-radius: 12px;
@@ -23,7 +23,7 @@ span.spanfromForInput {
   display: none;
 }
 
-input.loginInputs {
+input.inputFields {
   margin: 1rem 0;
   border: none;
   border-radius: 12px;
@@ -31,10 +31,23 @@ input.loginInputs {
   font-size: 0.9em;
 }
 
-input.loginInputs:focus-visible {
+input.inputFields:focus-visible {
   outline: none;
+  
 }
 
-input.loginInputs:invalid[focused="true"] ~ span {
+input.inputFields:invalid[focused="true"] ~ span {
   display: block;
+}
+
+@media only screen and (max-width: 550px) {
+  span.span_inputFields{
+    font-size: 0.65rem;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  span.span_inputFields{
+    font-size: 0.65rem;
+  }
 }

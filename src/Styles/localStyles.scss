@@ -62,8 +62,17 @@ LoginModal & RegisterModal
     }
 
     .esqueciasenha {
-      text-align: right;
+      width: 8rem;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      margin-left: auto;
+      border: none;
       margin-bottom: $standardSpace;
+      border-radius: $standardRadius;
+      background: none;
+      color: #ffffff;
+      cursor: pointer;
     }
 
     button.change-page-btn {
@@ -145,6 +154,18 @@ LoginModal & RegisterModal
   }
 }
 
+
+/* 
+
+Modal ForgetPassword
+
+*/
+
+.h1_modalFP{
+  font-size: 1.5rem;
+}
+
+
 /* 
 
 Hide arrows from input (type = number) 
@@ -182,9 +203,6 @@ input[type="number"] {
       }
     }
   }
-  .spanfromForInput{
-    font-size: 0.65rem;
-  }
 }
 
 @media screen and (min-height: 801px) {
@@ -213,7 +231,7 @@ input[type="number"] {
     p {
       font-size: 0.7rem;
     }
-    .input {
+    .inputResponsiv {
       padding: 0.4rem 0.5rem;
       margin: 0.6rem 0;
     }
@@ -238,7 +256,7 @@ input[type="number"] {
       margin-bottom: 0;
       font-size: 0.65rem;
     }
-    .input {
+    .inputResponsiv {
       padding: 0.4rem 0.5rem;
       margin: 0.6rem 0;
     }
@@ -253,8 +271,5 @@ input[type="number"] {
     .change-page-btn {
       font-size: 0.65rem;
     }
-  }
-  .spanfromForInput{
-    font-size: 0.65rem;
   }
 }
