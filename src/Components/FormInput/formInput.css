@@ -47,7 +47,7 @@ Span - errorMessage
 
 */
 
-span {
+span.spanfromForInput {
   font-size: 0.8rem;
   background-color: #7f75ff;
   border-radius: 12px;
@@ -68,6 +68,7 @@ input.registerInput {
 
 input.registerInput:focus-visible {
   outline: none;
+  
 }
 
 input.registerInput:invalid[focused="true"] ~ span {

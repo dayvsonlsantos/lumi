@@ -16,9 +16,19 @@ function Modal({ closeModal, inputValueColor, inputColor }) {
   return (
     <div className="backdrop">
       {isLogin ? (
-        <LoginModal setRegisterForm={setRegisterForm} closeModal={closeModal} />
+        <LoginModal
+          setRegisterForm={setRegisterForm}
+          closeModal={closeModal}
+          inputValueColor={inputValueColor}
+          inputColor={inputColor}
+        />
       ) : (
-        <RegisterModal setLoginForm={setLoginForm} closeModal={closeModal} inputValueColor={inputValueColor} inputColor={inputColor} />
+        <RegisterModal
+          setLoginForm={setLoginForm}
+          closeModal={closeModal}
+          inputValueColor={inputValueColor}
+          inputColor={inputColor}
+        />
       )}
     </div>
   );

@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.formLoginInput {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* 
+
+Span - errorMessage
+
+*/
+
+span.spanfromForInput {
+  font-size: 0.8rem;
+  background-color: #7f75ff;
+  border-radius: 12px;
+  padding: 0.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  display: none;
+}
+
+input.loginInputs {
+  margin: 1rem 0;
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1rem;
+  font-size: 0.9em;
+}
+
+input.loginInputs:focus-visible {
+  outline: none;
+}
+
+input.loginInputs:invalid[focused="true"] ~ span {
+  display: block;
+}

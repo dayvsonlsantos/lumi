@@ -4,18 +4,29 @@ import { CgClose } from "react-icons/cg";
 import { ModalDiv, Submit } from "../../themes/LocalStyles";
 import FormInput from "../FormInput/FormInput";
 
-function RegisterModal({ setLoginForm, closeModal, inputValueColor, inputColor }) {
+function RegisterModal({
+  setLoginForm,
+  closeModal,
+  inputValueColor,
+  inputColor,
+}) {
   //Toggle para verificação se o usuário será um prestador de serviço
 
-  const [toggleButtonOption, setToggleButtonOption] = useState(false);
+  const [toggleButtonOption, setToggleButtonOption] = useState("false");
 
   function ChangeToggleButton(e) {
-    if (toggleButtonOption === true) {
-      setToggleButtonOption(false);
-      setValues({ ...values, [e.target.toggleButton]: e.target.value=false });
+    if (toggleButtonOption === "true") {
+      setToggleButtonOption("false");
+      setValues({
+        ...values,
+        [e.target.toggleButton]: (e.target.value = "false"),
+      });
     } else {
-      setToggleButtonOption(true);
-      setValues({ ...values, [e.target.toggleButton]: e.target.value=true });
+      setToggleButtonOption("true");
+      setValues({
+        ...values,
+        [e.target.toggleButton]: (e.target.value = "true"),
+      });
     }
   }
 
@@ -39,7 +50,8 @@ function RegisterModal({ setLoginForm, closeModal, inputValueColor, inputColor }
       type: "text",
       name: "registerfirstName",
       placeholder: "Informe o seu nome",
-      errorMessage: "Nome deve possuir 3-16 caracteres e não pode conter caracteres especiais.",
+      errorMessage:
+        "Nome deve possuir 3-16 caracteres e não pode conter caracteres especiais.",
       label: "Nome",
       required: true,
       pattern: "^[A-Za-z]{3,16}$",
@@ -50,7 +62,8 @@ function RegisterModal({ setLoginForm, closeModal, inputValueColor, inputColor }
       type: "text",
       name: "registerLastName",
       placeholder: "Informe o seu sobrenome",
-      errorMessage: "Sobrenome deve possuir 3-45 caracteres e não pode conter caracteres especiais.",
+      errorMessage:
+        "Sobrenome deve possuir 3-45 caracteres e não pode conter caracteres especiais.",
       label: "Sobrenome",
       required: true,
       pattern: "^[A-Za-z]{3,16}$",
@@ -71,7 +84,8 @@ function RegisterModal({ setLoginForm, closeModal, inputValueColor, inputColor }
       type: "text",
       name: "registerCPF",
       placeholder: "Informe o seu CPF",
-      errorMessage: "O CPF deve conter 11 caracteres, sendo informado apenas os números",
+      errorMessage:
+        "O CPF deve conter 11 caracteres, sendo informado apenas os números",
       label: "CPF",
       pattern: "^[0-9]{11}$",
       required: true,
@@ -82,7 +96,8 @@ function RegisterModal({ setLoginForm, closeModal, inputValueColor, inputColor }
       type: "text",
       name: "registerPhone",
       placeholder: "Informe o seu telefone",
-      errorMessage: "O telefone deve conter 11 caracteres, sendo informado apenas os números",
+      errorMessage:
+        "O telefone deve conter 11 caracteres, sendo informado apenas os números",
       label: "Telefone",
       required: true,
       pattern: "^[0-9]{11}$",
@@ -93,10 +108,12 @@ function RegisterModal({ setLoginForm, closeModal, inputValueColor, inputColor }
       type: "password",
       name: "registerPassword",
       placeholder: "Informe a sua senha",
-      errorMessage: "A senha deve conter no mínimo 8-16 caracteres, número, letras maiúsculas e/ou minúsculas e caractere especial",
+      errorMessage:
+        "A senha deve conter no mínimo 8-16 caracteres, número, letras maiúsculas e/ou minúsculas e caractere especial",
       label: "Senha",
       required: true,
-      pattern: "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$",
+      pattern:
+        "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$",
     },
     {
       id: "registerConf_Password",
@@ -120,13 +137,13 @@ function RegisterModal({ setLoginForm, closeModal, inputValueColor, inputColor }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(values);
   };
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  console.log(values);
   return (
     <ModalDiv className="modal register_modal">
       <form onSubmit={handleSubmit}>
@@ -151,8 +168,6 @@ function RegisterModal({ setLoginForm, closeModal, inputValueColor, inputColor }
             />
           ))}
         </div>
-
-        {console.log(toggleButtonOption)}
 
         <div className="bottom_register_form">
           <Submit className="submit-btn">Cadastrar</Submit>

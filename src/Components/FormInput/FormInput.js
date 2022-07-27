@@ -1,6 +1,6 @@
 import "./formInput.css";
 import styled from "styled-components";
-import {useState} from 'react';
+import { useState } from "react";
 import "../../Styles/localStyles.scss";
 
 const InputToggle = styled.input`
@@ -15,9 +15,8 @@ const InputToggle = styled.input`
 `;
 
 const FormInput = (props) => {
-  
-    const [focused, setFocused] = useState(false);
-    const {
+  const [focused, setFocused] = useState(false);
+  const {
     label,
     onChange,
     id,
@@ -37,7 +36,7 @@ const FormInput = (props) => {
     <div className="toggleButton_div">
       <label htmlFor="toggleButton">Prestar serviço?</label>
 
-      {toggleButtonOption ? (
+      {toggleButtonOption==="true" ? (
         <InputToggle
           className="toggle-input"
           {...inputProps}
@@ -56,13 +55,16 @@ const FormInput = (props) => {
   ) : (
     <div className="formInput">
       <label htmlFor={id}>{label}</label>
-      <input 
+      <input
         {...inputProps}
         onChange={onChange}
         onBlur={handleFocus}
+        onFocus={() =>
+          inputProps.name === "registerConf_Password" && setFocused(true)
+        }
         focused={focused.toString()}
         className="registerInput input"
-        style={{color: inputValueColor, background: inputColor}}
+        style={{ color: inputValueColor, background: inputColor }}
       />
       <span className="spanfromForInput">{errorMessage}</span>
     </div>

@@ -29,10 +29,41 @@ function App() {
   const light_inputValueColor = "#7D7D7D"
   const dark_inputValueColor = "#ffffff"
 
-  //Definindo a cor padrão dos input e value como light:
+
+  const setModeInput = (modeInput) => {
+    window.localStorage.setItem(light_inputColor, modeInput);
+    setInputColor(modeInput)
+  }
+
+    useEffect(() => {
+      const LocalInput = window.localStorage.getItem(light_inputColor);
+      LocalInput ? setInputColor(LocalInput) : setModeInput(dark_inputColor);
+    }, []);
+  
+
+  //Definindo a cor padrão do input como light:
   const [inputColor, setInputColor] = useState(light_inputColor);
+  
+
+  
+  const setModeValueInput = (modeValueFromInput) => {
+    window.localStorage.setItem(light_inputValueColor, modeValueFromInput);
+    setInputValueColor(modeValueFromInput)
+  }
+
+    useEffect(() => {
+      const LocalValueFromInput = window.localStorage.getItem(light_inputValueColor);
+      LocalValueFromInput ? setInputValueColor(LocalValueFromInput) : setModeValueInput(dark_inputValueColor);
+    }, []);
+  
+  
+  
+  //Definindo a cor padrão do value do input como light:
   const [inputValueColor, setInputValueColor] = useState(light_inputValueColor);
   
+
+
+
 
   //Salvando o tema da página ao recarregar:
   //Todo: completar explicação do código!!! link do video no telegram
@@ -47,7 +78,13 @@ function App() {
     localTheme ? setTheme(localTheme) : setMode("npmdark");
   }, []);
 
-  const [logo, setLogo] = useState(logolight); //Definindo logo padrão como a light;
+  
+
+
+
+
+
+
 
   //Salvando o tema da logo da página ao recarregar:
 
@@ -61,6 +98,12 @@ function App() {
     localLogo ? setLogo(localLogo) : setModeLogo(logodark);
   }, []);
 
+  const [logo, setLogo] = useState(logolight); //Definindo logo padrão como a light;
+
+
+
+
+
   //Função de alteração entre temas (light/dark), chamada no botão darkmode:
 
   const [theme, setTheme] = useState("light"); //Definindo tema padrão como light;
@@ -72,16 +115,16 @@ function App() {
       setSvgColor(lightPurple); //Alterando cor dos SVGs para a versão light (Roxo claro);
 
       //Alterando a cor do input e value para dark:
-      setInputColor(dark_inputColor);
-      setInputValueColor(dark_inputValueColor);
+      setModeInput(dark_inputColor);
+      setModeValueInput(dark_inputValueColor);
     } else {
       setMode("light"); //Alterando tema para a versão light;
       setModeLogo(logolight); //Alterando logo para a versão light;
       setSvgColor(darkPurple); //Alterando cor dos SVGs para a versão dark (Roxo escuro);
 
       //Alterando a cor do input e value para light:
-      setInputColor(light_inputColor);
-      setInputValueColor(light_inputValueColor);
+      setModeInput(light_inputColor);
+      setModeValueInput(light_inputValueColor);
     }
   }
 
