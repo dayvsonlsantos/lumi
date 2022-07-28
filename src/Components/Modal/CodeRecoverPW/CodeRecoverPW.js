@@ -2,15 +2,14 @@ import "../../../Styles/localStyles.scss";
 import React, { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { ModalDiv, Submit } from "../../../themes/LocalStyles";
-import InputFieldFP from "./InputFieldFP/InputFieldFP";
+import InputFieldCode from "./InputFieldCode/InputFieldCode";
 
-function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModalCode }) {
+function CodeRecoverPW({ closeModalCode, inputColor, inputValueColor, openModalRecover }) {
   
     //Verificação dos campos do formulário:
 
         const [values, setValues] = useState({
-            emailFP: "",
-            cpfFP: "",
+            codeRecover: "",
         });
 
     // -----------------------------------------------------------------------
@@ -19,25 +18,12 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
 
         const inputs = [
             {
-            id: "emailFP",
-            className: "input",
-            type: "email",
-            name: "emailFP",
-            placeholder: "Informe o seu e-mail",
-            errorMessage: "Esse não é um endereço de e-mail válido!",
-            label: "E-mail",
-            required: true,
-            },
-            {
-            id: "cpfFP",
+            id: "codeRecover",
             className: "input",
             type: "text",
-            name: "cpfFP",
-            placeholder: "Informe o seu CPF",
-            errorMessage:
-                "O CPF deve conter 11 caracteres, sendo informado apenas os números",
-            label: "CPF",
-            pattern: "^[0-9]{11}$",
+            name: "codeRecover",
+            placeholder: "Informe o código enviado em seu e-mail",
+            label: "Código",
             required: true,
             },
         ];
@@ -47,7 +33,7 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
       
         const handleSubmit = (e) => {
             e.preventDefault();
-            console.log(values);       
+            console.log(values);
         };
 
     // -----------------------------------------------------------------------
@@ -70,13 +56,13 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
             <form onSubmit={handleSubmit}>
                 <div className="header_form"> 
                 <h1 className="h1_modalFP">Recuperar a senha</h1>
-                <button className="close-modal-btn" onClick={closeModalPass}> 
+                <button className="close-modal-btn" onClick={closeModalCode}> 
                     <CgClose />
                 </button>
                 </div>
-                <div className="FPInputDiv">
+                <div className="codeInput">
                 {inputs.map((input) => (
-                    <InputFieldFP
+                    <InputFieldCode
                     key={input.id}
                     {...input}
                     value={values[input.name]}
@@ -86,7 +72,7 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
                     />
                 ))}
                 </div>
-                <p onClick={openModalCode} style={{cursor: "pointer"}}>Clicar</p>
+                <p onClick={openModalRecover}>Clicar</p>
                 <Submit className="submit-btn">Enviar</Submit>
             </form>
         </ModalDiv>
@@ -94,4 +80,4 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
   );
 }
 
-export default ForgetPassword;
+export default CodeRecoverPW;

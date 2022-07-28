@@ -10,7 +10,6 @@ import Home from "./Pages/home/Home";
 
 //Componentes
 import Navbar from "./Components/Navbar/Navbar";
-import Modal from "./Components/Modal/Modal";
 
 //Temas e Cores
 import { lightTheme, darkTheme } from "./themes/Themes.js";
@@ -20,8 +19,11 @@ import { GlobalStyles } from "./GlobalStyles";
 import logolight from "./Assets/logo/icon_lumi.svg";
 import logodark from "./Assets/logo/icon_lumi_dark.svg";
 
-
+//Modal
+import Modal from "./Components/Modal/Modal";
 import ForgetPassword from "./Components/Modal/ForgetPassword/ForgetPassword";
+import CodeRecoverPW from "./Components/Modal/CodeRecoverPW/CodeRecoverPW";
+import RecoverPassword from "./Components/Modal/RecoverPassword/RecoverPassword";
 
 function App() {
   
@@ -56,12 +58,50 @@ function App() {
       }
 
       //Função enviada para o modal ForgetPassword
-      function closeModalPass(e){
+      function closeModalPass(){
         setModalPassOpen(false);
       }
     
     //-----------------------------------------------------------------------
 
+
+
+    //Fechar e abrir ForgetPassword
+      
+      const[IsModalCodeOpen, setModalCodeOpen] = useState(false);
+
+      //Função para abertura e fechamento do modal ForgetPassword, Função enviada para o componente Modal.
+      function openModalCode(e){
+        e.preventDefault();
+        setModalCodeOpen(true);
+        setModalPassOpen(false);
+      }
+
+      //Função enviada para o modal ForgetPassword
+      function closeModalCode(){
+        setModalCodeOpen(false);
+      }
+  
+    //-----------------------------------------------------------------------
+
+
+    //Fechar e abrir RecoverPassword
+      
+    const[IsModalRecoverOpen, setModalRecoverOpen] = useState(false);
+
+      //Função para abertura e fechamento do modal RecoverPassword, Função enviada para o componente ForgetPassword.
+      function openModalRecover(e){
+        e.preventDefault();
+        setModalRecoverOpen(true);
+        setModalCodeOpen(false);
+      }
+
+      //Função enviada para o modal RecoverPassword
+      function closeModalRecover(){
+        setModalRecoverOpen(false);
+      }
+
+    //-----------------------------------------------------------------------
 
 
     /* Temas e Cores: */
@@ -214,12 +254,27 @@ function App() {
 
         {/* 
           Abrir Modal ForgetPassword:
+          - Se modal estiver aberto, enviar a função para fechar (closeModalPass) 
+          - Enviar a cor para o input e p/ o seu valor
+        */}
+        {IsModalPassOpen ? <ForgetPassword closeModalPass={closeModalPass} inputColor={inputColor} inputValueColor={inputValueColor} openModalCode={openModalCode}/> : null}
+
+        {/* 
+          Abrir Modal CodeRecoverPW:
+          - Se modal estiver aberto, enviar a função para fechar (closeModalCode) 
+          - Enviar a cor para o input e p/ o seu valor
+        */}
+        {IsModalCodeOpen ? <CodeRecoverPW closeModalCode={closeModalCode} inputColor={inputColor} inputValueColor={inputValueColor} openModalRecover={openModalRecover} /> : null}
+
+
+        {/* 
+          Abrir Modal RecoverPassword:
           - Se modal estiver aberto, enviar a função para fechar (closeModal) 
           - Enviar a cor para o input e p/ o seu valor
         */}
-        {IsModalPassOpen ? <ForgetPassword closeModalPass={closeModalPass} inputColor={inputColor} inputValueColor={inputValueColor} /> : null}
+        {IsModalRecoverOpen ? <RecoverPassword closeModalRecover={closeModalRecover} inputColor={inputColor} inputValueColor={inputValueColor} /> : null}
 
-
+        
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

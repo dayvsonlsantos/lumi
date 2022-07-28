@@ -2,15 +2,15 @@ import "../../../Styles/localStyles.scss";
 import React, { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { ModalDiv, Submit } from "../../../themes/LocalStyles";
-import InputFieldFP from "./InputFieldFP/InputFieldFP";
+import InputFieldRP from "./InputFieldRP/InputFieldRP";
 
-function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModalCode }) {
+function RecoverPassword({ closeModalRecover, inputColor, inputValueColor }) {
   
     //Verificação dos campos do formulário:
 
         const [values, setValues] = useState({
-            emailFP: "",
-            cpfFP: "",
+            passwordRecover: "",
+            confirmPasswordRecover: "",
         });
 
     // -----------------------------------------------------------------------
@@ -19,27 +19,29 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
 
         const inputs = [
             {
-            id: "emailFP",
-            className: "input",
-            type: "email",
-            name: "emailFP",
-            placeholder: "Informe o seu e-mail",
-            errorMessage: "Esse não é um endereço de e-mail válido!",
-            label: "E-mail",
-            required: true,
-            },
+                id: "passwordRecover",
+                className: "input",
+                type: "password",
+                name: "passwordRecover",
+                placeholder: "Informe uma nova senha",
+                errorMessage:
+                  "A senha deve conter no mínimo 8-16 caracteres, número, letras maiúsculas e/ou minúsculas e caractere especial",
+                label: "Nova senha",
+                required: true,
+                pattern:
+                  "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$",
+              },
             {
-            id: "cpfFP",
-            className: "input",
-            type: "text",
-            name: "cpfFP",
-            placeholder: "Informe o seu CPF",
-            errorMessage:
-                "O CPF deve conter 11 caracteres, sendo informado apenas os números",
-            label: "CPF",
-            pattern: "^[0-9]{11}$",
-            required: true,
-            },
+                id: "confirmPasswordRecover",
+                className: "input",
+                type: "password",
+                name: "confirmPasswordRecover",
+                placeholder: "Confirme a nova sua senha",
+                errorMessage: "As senhas não são iguais!",
+                label: "Confirmar nova senha",
+                required: true,
+                pattern: values.passwordRecover,
+              },
         ];
     // -----------------------------------------------------------------------
 
@@ -47,7 +49,7 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
       
         const handleSubmit = (e) => {
             e.preventDefault();
-            console.log(values);       
+            console.log(values);        
         };
 
     // -----------------------------------------------------------------------
@@ -69,14 +71,14 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
         <ModalDiv className="modal"> 
             <form onSubmit={handleSubmit}>
                 <div className="header_form"> 
-                <h1 className="h1_modalFP">Recuperar a senha</h1>
-                <button className="close-modal-btn" onClick={closeModalPass}> 
+                <h1 className="h1_modalFP">Criar nova senha</h1>
+                <button className="close-modal-btn" onClick={closeModalRecover}> 
                     <CgClose />
                 </button>
                 </div>
-                <div className="FPInputDiv">
+                <div className="recoverInput">
                 {inputs.map((input) => (
-                    <InputFieldFP
+                    <InputFieldRP
                     key={input.id}
                     {...input}
                     value={values[input.name]}
@@ -86,7 +88,6 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
                     />
                 ))}
                 </div>
-                <p onClick={openModalCode} style={{cursor: "pointer"}}>Clicar</p>
                 <Submit className="submit-btn">Enviar</Submit>
             </form>
         </ModalDiv>
@@ -94,4 +95,4 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
   );
 }
 
-export default ForgetPassword;
+export default RecoverPassword;

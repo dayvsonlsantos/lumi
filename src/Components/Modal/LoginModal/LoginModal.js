@@ -40,10 +40,9 @@ function LoginModal({
           type: "password",
           name: "loginPassword",
           placeholder: "Informe a sua senha",
-          errorMessage:
-            "A senha deve conter no mínimo 8-16 caracteres, número, letras maiúsculas e/ou minúsculas e caractere especial",
           label: "Senha",
           required: true,
+          errorMessage: "Essa senha não corresponde aos padrões de cadastro.",
           pattern:
             "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$",
         },

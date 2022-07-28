@@ -2,7 +2,7 @@ import "../../../../Styles/inputFields.css";
 import "../../../../Styles/localStyles.scss";
 import { useState } from "react";
 
-const InputFieldFP = (props) => {
+const InputFieldRP = (props) => {
   const [focused, setFocused] = useState(false);
 
   // Recebendo as props
@@ -44,12 +44,13 @@ const InputFieldFP = (props) => {
         focused={focused.toString()}
         className="inputFields inputResponsiv" /* Classe inputResponsiv: localStyles.scss */
         style={{ color: inputValueColor, background: inputColor }}
+
         /*
           Faz com que o campo de confirmação de senha, já informe o span assim que clicar.
           (Evita que esse span só seja exibido ao clicar em enviar)
         */ 
         onFocus={() =>
-          inputProps.name === "cpfFP" && setFocused(true)
+          inputProps.name === "confirmPasswordRecover" && setFocused(true)
         }
       />
       <span className="span_inputFields ">{errorMessage}</span>
@@ -57,4 +58,4 @@ const InputFieldFP = (props) => {
   );
 };
 
-export default InputFieldFP;
+export default InputFieldRP;
