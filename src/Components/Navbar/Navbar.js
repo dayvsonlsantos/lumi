@@ -1,70 +1,94 @@
-import styles from "./Navbar.module.scss";
 import { Link } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHome6Fill, RiUser3Fill } from "react-icons/ri";
 import { ToggleMode } from "../ToggleMode/ToggleMode";
 import { TiGroup } from "react-icons/ti";
+import { CgMenuRight } from "react-icons/cg";
 
-import { Search, InputNav, IconButton } from "../../themes/LocalStyles";
+//Componentes
+import {
+  Container,
+  SectionL,
+  SectionC,
+  Search,
+  SVG,
+  InputNav,
+  SectionR,
+  IconButton,
+  SectionMenuMobile,
+  HideDarkMode,
+} from "./NavbarDesign";
 
-function Header({ event, imgsrc, svg_set_color, themebutton, openModal }) {
+import MenuMobile from "../MenuMobile/MenuMobile";
+import { useState } from "react";
+
+function Header({ event, imgsrc, themebutton, openModal }) {
+  const [menuIsVisible, setMenuisVisible] = useState(false); //Estado inicial do modal, false, pois inicia-se fechado
+
+  //Função para abertura e fechamento do modal Mudar Senha, Função enviada para o componente navbar
+  function openModalMenuMobile() {
+    setMenuisVisible(true);
+  }
+
+  //Função enviada para o componente modal
+  function closeModalMenuMobile() {
+    setMenuisVisible(false);
+  }
+
   return (
-    <header className={styles.header}>
-      <section className={styles.left}>
-        <div className={styles.logo}>
-          <Link to="/">
-            {/* Utilizando a logo recebida como prop (imgsrc) */}
-            <img src={imgsrc} alt="logo do website Lumi" />
-          </Link>
-        </div>
-      </section>
-
-      <section className={styles.center}>
-        <div className={styles.changeModeDiv}>
-          {/*
-          
-          Botão Darkmode (vindo do componente ToggleMode);
-          onClick, recebe prop (event) -> Ativando a função (themeToggler) do componente App.js
-          Prop theme, para alteração do botão (sol e lua) entre os modos dark e light.
-
-          */}
-          <ToggleMode theme={themebutton} toggleTheme={event} />
-        </div>
-
-        <Search>
-          {/*
-          Definindo a cor do SVG com o valor da prop (svg_set_color), encaminhada do componente App.js 
-          */}
-
-          <BiSearchAlt style={svg_set_color} />
-          <InputNav />
-        </Search>
-      </section>
-
-      <section className={styles.right}>
+    <>
+      {menuIsVisible ? (
+        <MenuMobile
+          closeModalMenuMobile={closeModalMenuMobile}
+          menuIsVisible={menuIsVisible}
+          themebutton={themebutton}
+          event={event}
+          openModal={openModal}
+        />
+      ) : null}
+      <Container>
         <Link to="/">
-          <IconButton>
-            <RiHome6Fill style={{ color: "#F3F3F3", fontSize: "1.4rem" }} />
-          </IconButton>
+          <SectionL>
+            <img src={imgsrc} alt="Logo - Lumi" />
+          </SectionL>
         </Link>
 
-        <IconButton onClick={openModal}>
-          <RiUser3Fill style={{ color: "#F3F3F3", fontSize: "1.4rem" }} />
-        </IconButton>
+        <SectionC>
+          <HideDarkMode>
+            <ToggleMode theme={themebutton} toggleTheme={event} />
+          </HideDarkMode>
+          <Search>
+            <SVG>
+              <BiSearchAlt />
+            </SVG>
+            <InputNav />
+          </Search>
+          <SectionMenuMobile>
+            <IconButton>
+              <CgMenuRight onClick={openModalMenuMobile} />
+            </IconButton>
+          </SectionMenuMobile>
+        </SectionC>
 
-        <Link to="/equipe">
-          <IconButton>
-            <TiGroup style={{ color: "#F3F3F3", fontSize: "1.4rem" }} />
+        <SectionR>
+          <Link to="/">
+            <IconButton>
+              <RiHome6Fill />
+            </IconButton>
+          </Link>
+
+          <IconButton onClick={openModal}>
+            <RiUser3Fill />
           </IconButton>
-        </Link>
 
-        
-      </section>
-
-      <section>
-        <Link to="/perfil">Clique</Link>
-      </section>
-    </header>
+          <Link to="/equipe">
+            <IconButton>
+              <TiGroup />
+            </IconButton>
+          </Link>
+        </SectionR>
+      </Container>
+    </>
   );
 }
 

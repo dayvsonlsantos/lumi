@@ -1,10 +1,10 @@
 import ServiceModalLine from "../../Components/Modal/ServiceModal/Line/ServiceModalLine";
 import {Main} from "./HomeDesign";
 
-function Home({svgColor}){
+function Home(){
     return(
         <Main>
-            <ServiceModalLine svgColor={svgColor}/>
+            <ServiceModalLine/>
         </Main>
     )
 }

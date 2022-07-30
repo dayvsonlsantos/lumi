@@ -10,6 +10,7 @@ export const lightTheme = {
   span_color: "#7D7D7D",
   user_input: "#ffffff",
   user_input_value: "#7D7D7D",
+  svgVariant: "#ffffff",
 };
 
 export const darkTheme = {
@@ -24,4 +25,5 @@ export const darkTheme = {
   span_color: "#D3D3D3",
   user_input: "#403A4F",
   user_input_value: "#D2D2D2",
+  svgVariant: "#02001F",
 };

@@ -59,6 +59,7 @@ export const AboutTeam = styled.div`
   height: 100%;
   align-self: center;
   flex-direction: column;
+  text-indent: 2rem;
   text-align: justify;
   border-radius: 12px;
   background-color: ${({ theme }) => theme.view_background};

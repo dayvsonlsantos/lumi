@@ -2,57 +2,15 @@ import styled from "styled-components";
 
 //Navbar
 
-export const Search = styled.div`
-  display: flex;
-  align-items: center;
-  border-radius: 12px;
-  border-right: none;
-  width: 40rem;
-  height: 3rem;
-  padding: 1.5rem;
-  background-color: ${({ theme }) => theme.view_background};
-  transition: all 0.5s ease;
-`;
 
-export const InputNav = styled.input.attrs({
-  type: "search",
-  name: "search",
-  id: "search",
-  placeholder: "Pesquisar serviço",
-})`
-      border: none;
-      font-size: 1.1em;
-      border-radius: 12px;
-      padding: 0.5rem;
-      margin-left: 1rem;
-      width: 95%;
-      background-color: ${({ theme }) => theme.view_background};
-      color: ${({ theme }) => theme.view_text};
-      transition: all .5s ease;
-      &:focus-visible {
-        outline: none;
-      }
-      &&::placeholder {
-        color: "${({ theme }) => theme.view_text};"
-        opacity: 0.7;
-      }
-    `;
+
+
 
 // ------------------------------------------------------------
 
 //Background Icon
 
-export const IconButton = styled.div`
-  background-color: ${({ theme }) => theme.background_modal};
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 100%;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-`;
+
 
 // ------------------------------------------------------------
 

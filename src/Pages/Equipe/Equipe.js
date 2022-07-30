@@ -33,9 +33,9 @@ function Equipe(){
             <SectionTeam>
                 <AsideTeam>
                     <AboutTeam>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Me chamo Vitor Gabriel, nascido em 08/01/2001. Sempre estive envolvido com a tecnologia, fiz meu primeiro curso de informática com 13 anos e desde então comecei outros cursos na área de ti porém nada relacionado a programação. Me graduei em gastronomia no ano de 2020 mas é um mercado que não me encontrei e não encontrei meu devido valor e foi aí que decidi me aprofundar na tecnologia, em 2021 iniciei uma nova faculdade, dessa vez de ADS(análise e desenvolvimento de sistema) e me inscrevi no start, onde em 2022 fui um dos selecionados para fazer parte desse imenso projeto.</p>
                         <Links>
-                            <a href = "mailto:dayvsonlsantos@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" alt="Badge Gmail"rel="noreferrer" target="_parent" /></a>
+                            <a href = "mailto:vitoorgabri3l@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" alt="Badge Gmail"rel="noreferrer" target="_parent" /></a>
                             <a href="https://www.linkedin.com/in/vitor-gabriel-b42563218/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Badge Linkdin" rel="noreferrer" target="_parent"/></a> 
                             <a href="https://github.com/Vitorgabri3l" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="Badge Github" rel="noreferrer" target="_parent"/></a> 
                         </Links>

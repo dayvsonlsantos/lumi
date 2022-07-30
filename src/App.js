@@ -241,7 +241,6 @@ function App() {
         <Navbar
           event={themeToggler} //Função(themeToggler)
           imgsrc={logo} //logo
-          svg_set_color={svgColor} //cor do svg para a navbar
           themebutton={theme} //tema do botão (sol ou lua)
           openModal={openModalSign} //Abrir modal de login/cad 
         />
