@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./UserData.module.css";
-import {ProfileInput, Label, Span, UserDiv, LabelToggle, RadioButton} from "./ProfileDesign";
+import {ProfileInput, Label, Span, UserDiv, LabelToggle, RadioButton, H2} from "./ProfileDesign";
 
 const userFirstName = "João";
 const userLastName = "Medeiros da Silva";
@@ -10,6 +10,14 @@ const userCPF = "12345678945";
 const userDTNasc = "2001-10-12";
 const userPhone = "81984527891";
 const userToggleOption = "true";
+const userCEP = "50610-246";
+const userStreet = "Rua Mandacaru";
+const userHouseNumber = "248";
+const userBairro = "Casa Amarela";
+const userCity = "Recife";
+const userState = "PE";
+
+
 
 
 export const UserData = () => {
@@ -71,17 +79,19 @@ export const UserData = () => {
                     </UserDiv>
                 </div>
                 <div className={styles.row}>
-                    <UserDiv className={styles.userToggle}>
-                        <Label htmlFor="toggleButton">Prestar serviço?</Label>
+                    <UserDiv className={styles.userRadio}>
+                        <Label htmlFor="userOption">Prestar serviço?</Label>
 
                         {userToggleOption==="true" ? (
-                            <div className={styles.userToggleOption}>
+                            <div className={styles.userRadioOption}>
                                 <LabelToggle>
-                                    <RadioButton value="Sim" defaultChecked />
+                                    <RadioButton type="radio"
+                                    id="sim" name="userOption" value="Sim" defaultChecked />
                                     Sim
                                 </LabelToggle>
                                 <LabelToggle>
-                                    <RadioButton value="Não" />
+                                <RadioButton type="radio"
+                                    id="nao" name="userOption" value="Não" defaultChecked />
                                     Não
                                 </LabelToggle>
                             </div>
@@ -103,25 +113,51 @@ export const UserData = () => {
                 </div>
             </aside>
             <aside className={styles.profileAsideR}>
-                <div className={styles.row}>
-                    <h2 className={styles.user_h2}>Endereços</h2>
+                <div className={styles.rowEnderecos}>
+                    <H2 className={styles.user_h2}>Endereços</H2>
                 </div>
                 <div className={styles.row}>
-                    <UserDiv className={styles.userFirstName}>
+                    <UserDiv className={styles.userCEP}>
                         <div className={styles.labelSVG}>
-                            <Label htmlFor="userFirstName">Nome</Label>
+                            <Label htmlFor="useruserCEP">Código Postal</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userFirstName" id="userFirstName" value={userFirstName}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userCEP" id="userCEP" value={userCEP}/>
                     </UserDiv>
-                    <UserDiv className={styles.userLastName}>
+                    <UserDiv className={styles.userStreet}>
                         <div className={styles.labelSVG}>
-                            <Label htmlFor="userLastName">Sobrenome</Label>
+                            <Label htmlFor="userStreet">Rua</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userLastName" id="userLastName" value={userLastName}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userStreet" id="userStreet" value={userStreet}/>
                     </UserDiv>
                 </div>
-                <div className={styles.row}></div>
-                <div className={styles.row}></div>
+                <div className={styles.row}>
+                    <UserDiv className={styles.userHouseNumber}>
+                        <div className={styles.labelSVG}>
+                            <Label htmlFor="useruserCEP">Número</Label>
+                        </div>  
+                        <ProfileInput className={styles.userInput} type="text" name="userHouseNumber" id="userHouseNumber" value={userHouseNumber}/>
+                    </UserDiv>
+                    <UserDiv className={styles.userBairro}>
+                        <div className={styles.labelSVG}>
+                            <Label htmlFor="userBairro">Bairro</Label>
+                        </div>  
+                        <ProfileInput className={styles.userInput} type="text" name="userBairro" id="userBairro" value={userBairro}/>
+                    </UserDiv>
+                </div>
+                <div className={styles.row}>
+                    <UserDiv className={styles.userCity}>
+                        <div className={styles.labelSVG}>
+                            <Label htmlFor="userCity">Cidade</Label>
+                        </div>  
+                        <ProfileInput className={styles.userInput} type="text" name="userCity" id="userCity" value={userCity}/>
+                    </UserDiv>
+                    <UserDiv className={styles.userState}>
+                        <div className={styles.labelSVG}>
+                            <Label htmlFor="userState">Estado</Label>
+                        </div>  
+                        <ProfileInput className={styles.userInput} type="text" name="userState" id="userState" value={userState}/>
+                    </UserDiv>
+                </div>
             </aside>
         </form>
     )

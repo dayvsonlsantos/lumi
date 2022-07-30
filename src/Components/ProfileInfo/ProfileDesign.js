@@ -97,11 +97,7 @@ export const LabelToggle = styled.label`
   justify-content: space-around;
 `;
 
-export const RadioButton = styled.input.attrs({
-  type: "radio",
-  id: "userToggle",
-  name: "userToggle",
-})`
+export const RadioButton = styled.input`
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
@@ -127,7 +123,13 @@ export const RadioButton = styled.input.attrs({
     box-shadow: inset 1em 1em ${({ theme }) => theme.purpleOP};
   }
 
-  &:checked::before{
+  &:checked::before {
     transform: scale(1);
   }
+`;
+
+export const H2 = styled.h2`
+  font-size: 0.9em;
+  font-weight: 400;
+  color: ${({ theme }) => theme.user_input_value};
 `;
