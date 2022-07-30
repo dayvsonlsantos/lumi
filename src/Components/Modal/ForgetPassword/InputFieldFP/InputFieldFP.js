@@ -13,7 +13,7 @@ const InputFieldFP = (props) => {
       id,
       errorMessage,
       inputValueColor,
-      inputColor,
+      bgColorG,
       ...inputProps
     } = props;
 
@@ -43,7 +43,7 @@ const InputFieldFP = (props) => {
         onBlur={handleFocus}
         focused={focused.toString()}
         className="inputFields inputResponsiv" /* Classe inputResponsiv: localStyles.scss */
-        style={{ color: inputValueColor, background: inputColor }}
+        style={{ color: inputValueColor, background: bgColorG }}
         /*
           Faz com que o campo de confirmação de senha, já informe o span assim que clicar.
           (Evita que esse span só seja exibido ao clicar em enviar)

@@ -4,7 +4,7 @@ import { CgClose } from "react-icons/cg";
 import { ModalDiv, Submit } from "../../../themes/LocalStyles";
 import InputFieldRP from "./InputFieldRP/InputFieldRP";
 
-function RecoverPassword({ closeModalRecover, inputColor, inputValueColor }) {
+function RecoverPassword({ closeModalRecover, bgColorG, inputValueColor }) {
   
     //Verificação dos campos do formulário:
 
@@ -84,7 +84,7 @@ function RecoverPassword({ closeModalRecover, inputColor, inputValueColor }) {
                     value={values[input.name]}
                     onChange={onChange}
                     inputValueColor={inputValueColor}
-                    inputColor={inputColor}
+                    bgColorG={bgColorG}
                     />
                 ))}
                 </div>

@@ -18,7 +18,7 @@ const FormInput = (props) => {
       errorMessage,
       ChangeToggleButton,
       inputValueColor,
-      inputColor,
+      bgColorG,
       toggleButtonOption,
       ...inputProps
     } = props;
@@ -49,7 +49,7 @@ const FormInput = (props) => {
 
       {toggleButtonOption==="true" ? (
         //Se o botão estiver ativo, então será retornado como checked, a partir do defaultChecked;
-        
+        <div>
         <InputToggle
 
           //Recebe todas as demais props
@@ -64,8 +64,13 @@ const FormInput = (props) => {
           defaultChecked
 
         />
+        
+        <span className="regSpanOption" style={{background: bgColorG, color: inputValueColor}}>Sim</span>
+        </div>
+        
       ) : (
         //Não estando ativo, retornará como desativado.
+        <div>
         <InputToggle
 
           //Recebe todas as demais props
@@ -78,7 +83,8 @@ const FormInput = (props) => {
           onClick={ChangeToggleButton}
 
         />
-
+        <span className="regSpanOption" style={{background: bgColorG, color: inputValueColor}}>Não</span>
+        </div>
         /*
           Essa verificação ocorre para seja mostrado na tela, o mesmo como foi enviado.
             - Se foi enviado como "true", o botão tem que está ativo.
@@ -119,7 +125,7 @@ const FormInput = (props) => {
          Determina a cor do background do input e a cor do seu valor, de acordo com o modo da tela (light, dark)
          const inputValueColor e inputColor, encontradas em App.js.
         */
-        style={{ color: inputValueColor, background: inputColor }}
+        style={{ color: inputValueColor, background: bgColorG }}
       />
     
       <span className="span_inputFields">{errorMessage}</span>

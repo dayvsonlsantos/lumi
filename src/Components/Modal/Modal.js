@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import RegisterModal from "./RegisterModal/RegisterModal";
 import LoginModal from "./LoginModal/LoginModal";
 
-function Modal({ closeModalSign, inputValueColor, inputColor, openModalPass }) {
+function Modal({ closeModalSign, inputValueColor, bgColorG, openModalPass }) {
   
 
   //Abertura e fechamento entre os modals: RegisterModal e LoginModal
@@ -34,7 +34,7 @@ function Modal({ closeModalSign, inputValueColor, inputColor, openModalPass }) {
 
           /*Alterar cor do input e seu valor*/
           inputValueColor={inputValueColor}
-          inputColor={inputColor}
+          bgColorG={bgColorG}
         />
       ) : (
         <RegisterModal
@@ -43,7 +43,7 @@ function Modal({ closeModalSign, inputValueColor, inputColor, openModalPass }) {
 
           /*Alterar cor do input e seu valor*/
           inputValueColor={inputValueColor}
-          inputColor={inputColor}
+          bgColorG={bgColorG}
         />
       )}
     </div>

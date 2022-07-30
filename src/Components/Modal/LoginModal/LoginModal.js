@@ -8,7 +8,7 @@ function LoginModal({
   setRegisterForm,
   closeModalSign,
   inputValueColor,
-  inputColor,
+  bgColorG,
   openModalPass,
 }) {
 
@@ -90,7 +90,7 @@ function LoginModal({
               value={values[input.name]}
               onChange={onChange}
               inputValueColor={inputValueColor}
-              inputColor={inputColor}
+              bgColorG={bgColorG}
             />
           ))}
         </div>

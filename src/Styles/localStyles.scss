@@ -135,9 +135,12 @@ LoginModal & RegisterModal
       justify-content: center;
       align-items: center;
       flex-direction: row;
-      span{
-        margin-left: 0.8*$standardSpace;
-      }
+    }
+    .regSpanOption {
+      margin-left: 0.8*$standardSpace;
+      border-radius: 12px;
+      text-align: center;
+      width: 3.5rem;
     }
   }
 
@@ -154,17 +157,16 @@ LoginModal & RegisterModal
   }
 }
 
-
 /* 
 
 Modal ForgetPassword
 
 */
 
-.h1_modalFP{
+.h1_modalFP {
   font-size: 1.5rem;
 }
-.FPInputDiv{
+.FPInputDiv {
   margin: 2.65rem 0;
 }
 
@@ -174,7 +176,7 @@ Modal CodeRecoverPW
 
 */
 
-.codeInput{
+.codeInput {
   margin: 5.8rem 0;
 }
 
@@ -184,10 +186,9 @@ Modal RecoverPassword
 
 */
 
-.recoverInput{
+.recoverInput {
   margin: 3.3rem 0;
 }
-
 
 /* 
 
@@ -210,7 +211,6 @@ input[type="number"] {
   .backdrop .modal {
     width: 450px;
   }
-  
 }
 
 @media screen and (max-height: 800px) {
@@ -259,7 +259,6 @@ input[type="number"] {
       margin: 0.6rem 0;
     }
   }
-  
 }
 
 @media only screen and (max-width: 550px) {

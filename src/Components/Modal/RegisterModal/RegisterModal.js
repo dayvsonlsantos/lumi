@@ -8,14 +8,14 @@ function RegisterModal({
   setLoginForm,
   closeModalSign,
   inputValueColor,
-  inputColor,
+  bgColorG,
 }) {
 
   /*
     setLoginForm: Permite alterar p/ o modal de Login;
     closeModal: Fechar o modal;
     inputValueColor: Alterar a cor do valor do input de acordo com o modo (light, dark);
-    inputColor: Alterar a cor do input de acordo com o modo (light, dark);
+    bgColorG: Alterar a cor do input de acordo com o modo (light, dark);
   */
 
   
@@ -199,9 +199,10 @@ function RegisterModal({
               ChangeToggleButton={ChangeToggleButton}
               toggleButtonOption={toggleButtonOption}
               inputValueColor={inputValueColor}
-              inputColor={inputColor}
+              bgColorG={bgColorG}
             />
           ))}
+          
         </div>
 
         <div className="bottom_register_form">

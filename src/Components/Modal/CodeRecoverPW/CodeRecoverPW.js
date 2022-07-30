@@ -4,7 +4,7 @@ import { CgClose } from "react-icons/cg";
 import { ModalDiv, Submit } from "../../../themes/LocalStyles";
 import InputFieldCode from "./InputFieldCode/InputFieldCode";
 
-function CodeRecoverPW({ closeModalCode, inputColor, inputValueColor, openModalRecover }) {
+function CodeRecoverPW({ closeModalCode, bgColorG, inputValueColor, openModalRecover }) {
   
     //Verificação dos campos do formulário:
 
@@ -68,7 +68,7 @@ function CodeRecoverPW({ closeModalCode, inputColor, inputValueColor, openModalR
                     value={values[input.name]}
                     onChange={onChange}
                     inputValueColor={inputValueColor}
-                    inputColor={inputColor}
+                    bgColorG={bgColorG}
                     />
                 ))}
                 </div>

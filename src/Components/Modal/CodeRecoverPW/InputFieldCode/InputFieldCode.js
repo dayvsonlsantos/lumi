@@ -10,7 +10,7 @@ const InputFieldCode = (props) => {
       onChange,
       id,
       inputValueColor,
-      inputColor,
+      bgColorG,
       ...inputProps
     } = props;
 
@@ -30,7 +30,7 @@ const InputFieldCode = (props) => {
         {...inputProps}
         onChange={onChange}
         className="inputFields inputResponsiv" /* Classe inputResponsiv: localStyles.scss */
-        style={{ color: inputValueColor, background: inputColor }}
+        style={{ color: inputValueColor, background: bgColorG }}
       />
     </div>
   );

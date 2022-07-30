@@ -4,7 +4,7 @@ import { CgClose } from "react-icons/cg";
 import { ModalDiv, Submit } from "../../../themes/LocalStyles";
 import InputFieldFP from "./InputFieldFP/InputFieldFP";
 
-function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModalCode }) {
+function ForgetPassword({ closeModalPass, bgColorG, inputValueColor, openModalCode }) {
   
     //Verificação dos campos do formulário:
 
@@ -82,7 +82,7 @@ function ForgetPassword({ closeModalPass, inputColor, inputValueColor, openModal
                     value={values[input.name]}
                     onChange={onChange}
                     inputValueColor={inputValueColor}
-                    inputColor={inputColor}
+                    bgColorG={bgColorG}
                     />
                 ))}
                 </div>

@@ -7,6 +7,7 @@ import "./Styles/main.scss";
 
 //Pages
 import Home from "./Pages/home/Home";
+import Profile from "./Pages/home/Profile";
 
 //Componentes
 import Navbar from "./Components/Navbar/Navbar";
@@ -121,21 +122,21 @@ function App() {
 
                 //Cores padrões nos modos light e dark, do input
 
-                  const light_inputColor = "#F3F3F3"
-                  const dark_inputColor = "#201B2C"
+                  const light_bgColorG = "#F3F3F3"
+                  const dark_bgColorG = "#201B2C"
 
                   //Definindo a cor padrão do input como light:
-                    const [inputColor, setInputColor] = useState(light_inputColor);
+                    const [bgColorG, setbgColorG] = useState(light_bgColorG);
 
                   //Salvando o tema do input ao recarregar a página:
                     const setModeInput = (modeInput) => {
-                      window.localStorage.setItem(light_inputColor, modeInput);
-                      setInputColor(modeInput)
+                      window.localStorage.setItem(light_bgColorG, modeInput);
+                      setbgColorG(modeInput)
                     }
                   
                     useEffect(() => {
-                      const LocalInput = window.localStorage.getItem(light_inputColor);
-                      LocalInput ? setInputColor(LocalInput) : setModeInput(dark_inputColor);
+                      const LocalInput = window.localStorage.getItem(light_bgColorG);
+                      LocalInput ? setbgColorG(LocalInput) : setModeInput(dark_bgColorG);
                     }, []);
                   
                 //-----------------------------------------------------------------------
@@ -214,7 +215,7 @@ function App() {
           setSvgColor(lightPurple); //Alterando cor dos SVGs para a versão light (Roxo claro);
 
           //Alterando a cor do input e value para dark:
-          setModeInput(dark_inputColor);
+          setModeInput(dark_bgColorG);
           setModeValueInput(dark_inputValueColor);
         } else {
           setMode("light"); //Alterando tema para a versão light;
@@ -222,7 +223,7 @@ function App() {
           setSvgColor(darkPurple); //Alterando cor dos SVGs para a versão dark (Roxo escuro);
 
           //Alterando a cor do input e value para light:
-          setModeInput(light_inputColor);
+          setModeInput(light_bgColorG);
           setModeValueInput(light_inputValueColor);
         }
       }
@@ -250,21 +251,21 @@ function App() {
           - Enviar a cor para o input e p/ o seu valor
           - 
         */}
-        {isModalSignOpen ? <Modal closeModalSign={closeModalSign} inputColor={inputColor} inputValueColor={inputValueColor}  openModalPass={openModalPass} /> : null}
+        {isModalSignOpen ? <Modal closeModalSign={closeModalSign} bgColorG={bgColorG} inputValueColor={inputValueColor}  openModalPass={openModalPass} /> : null}
 
         {/* 
           Abrir Modal ForgetPassword:
           - Se modal estiver aberto, enviar a função para fechar (closeModalPass) 
           - Enviar a cor para o input e p/ o seu valor
         */}
-        {IsModalPassOpen ? <ForgetPassword closeModalPass={closeModalPass} inputColor={inputColor} inputValueColor={inputValueColor} openModalCode={openModalCode}/> : null}
+        {IsModalPassOpen ? <ForgetPassword closeModalPass={closeModalPass} bgColorG={bgColorG} inputValueColor={inputValueColor} openModalCode={openModalCode}/> : null}
 
         {/* 
           Abrir Modal CodeRecoverPW:
           - Se modal estiver aberto, enviar a função para fechar (closeModalCode) 
           - Enviar a cor para o input e p/ o seu valor
         */}
-        {IsModalCodeOpen ? <CodeRecoverPW closeModalCode={closeModalCode} inputColor={inputColor} inputValueColor={inputValueColor} openModalRecover={openModalRecover} /> : null}
+        {IsModalCodeOpen ? <CodeRecoverPW closeModalCode={closeModalCode} bgColorG={bgColorG} inputValueColor={inputValueColor} openModalRecover={openModalRecover} /> : null}
 
 
         {/* 
@@ -272,11 +273,11 @@ function App() {
           - Se modal estiver aberto, enviar a função para fechar (closeModal) 
           - Enviar a cor para o input e p/ o seu valor
         */}
-        {IsModalRecoverOpen ? <RecoverPassword closeModalRecover={closeModalRecover} inputColor={inputColor} inputValueColor={inputValueColor} /> : null}
-
+        {IsModalRecoverOpen ? <RecoverPassword closeModalRecover={closeModalRecover} bgColorG={bgColorG} inputValueColor={inputValueColor} /> : null}
         
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/perfil" element={<Profile />} />
         </Routes>
       </Router>
     </ThemeProvider>
