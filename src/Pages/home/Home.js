@@ -1,10 +1,11 @@
-import styles from "./Home.module.css"
+import ServiceModalLine from "../../Components/Modal/ServiceModal/Line/ServiceModalLine";
+import {Main} from "./HomeDesign";
 
-function Home(){
+function Home({svgColor}){
     return(
-        <main className={styles.main}>
-            <h1>Ola</h1>
-        </main>
+        <Main>
+            <ServiceModalLine svgColor={svgColor}/>
+        </Main>
     )
 }
 

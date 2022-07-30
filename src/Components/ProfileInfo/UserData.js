@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./UserData.module.css";
-import {ProfileInput, Label, Span, UserDiv, LabelToggle, RadioButton, H2} from "./ProfileDesign";
+import {ProfileInput, Label, Span, UserDiv, LabelToggle, H2} from "./ProfileDesign";
 import { Submit } from "../../themes/LocalStyles";
+import { useState } from "react";
+import ChangePassword from "../../Components/Modal/ChangePassword/ChangePassword";
 
 const userFirstName = "João";
 const userLastName = "Medeiros da Silva";
@@ -19,11 +21,24 @@ const userCity = "Recife";
 const userState = "PE";
 
 
-
-
 export const UserData = () => {
+    
+    const [isModalChangePass, setModalChangePass] = useState(false); //Estado inicial do modal, false, pois inicia-se fechado
+
+    //Função para abertura e fechamento do modal Mudar Senha, Função enviada para o componente navbar
+    function openModalCP() {
+        setModalChangePass(true);
+    }
+
+    //Função enviada para o componente modal
+    function closeModalCP() {
+        setModalChangePass(false);
+    }
+    
     return (
         <form>
+            {isModalChangePass ? <ChangePassword closeModalCP={closeModalCP}/> : null}
+
             <aside className={styles.profileAsideL}>
                 <div className={styles.row}>
                     <UserDiv className={styles.userFirstName}>
@@ -49,7 +64,7 @@ export const UserData = () => {
                     <UserDiv className={styles.userPassword}>
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userPassword">Senha</Label>
-                            <Span>Mudar</Span>
+                            <Span onClick={openModalCP}>Mudar</Span>
                         </div>  
                         <ProfileInput className={styles.userInput} type="password" name="userPassword" id="userPassword" value={userPassword} readOnly/>
                     </UserDiv>
@@ -85,14 +100,7 @@ export const UserData = () => {
                         {userToggleOption==="true" ? (
                             <div className={styles.userRadioOption}>
                                 <LabelToggle>
-                                    <RadioButton type="radio"
-                                    id="sim" name="userOption" value="Sim" defaultChecked />
                                     Sim
-                                </LabelToggle>
-                                <LabelToggle>
-                                <RadioButton type="radio"
-                                    id="nao" name="userOption" value="Não"/>
-                                    Não
                                 </LabelToggle>
                             </div>
                             
@@ -100,11 +108,6 @@ export const UserData = () => {
                         ) : (
                             <div className={styles.userToggleOption}>
                                 <LabelToggle>
-                                    <input type="radio" id="userToggle" name="userToggle" value="Sim" readOnly/>
-                                    Sim
-                                </LabelToggle>
-                                <LabelToggle>
-                                    <input type="radio" id="userToggle" name="userToggle" value="Não" defaultChecked readOnly/>
                                     Não
                                 </LabelToggle>
                             </div>
@@ -162,6 +165,7 @@ export const UserData = () => {
                     </UserDiv>
                 </div>
             </aside>
+            
         </form>
     )
 }

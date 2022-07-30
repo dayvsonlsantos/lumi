@@ -277,7 +277,7 @@ function App() {
         {IsModalRecoverOpen ? <RecoverPassword closeModalRecover={closeModalRecover} bgColorG={bgColorG} inputValueColor={inputValueColor} /> : null}
         
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home svgColor={svgColor} />} />
           <Route path="/perfil" element={<Profile />} />
           <Route path="/equipe" element={<Equipe />} />
         </Routes>
