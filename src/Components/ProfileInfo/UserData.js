@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./UserData.module.css";
 import {ProfileInput, Label, Span, UserDiv, LabelToggle, RadioButton, H2} from "./ProfileDesign";
+import { Submit } from "../../themes/LocalStyles";
 
 const userFirstName = "João";
 const userLastName = "Medeiros da Silva";
@@ -29,13 +30,13 @@ export const UserData = () => {
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userFirstName">Nome</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userFirstName" id="userFirstName" value={userFirstName}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userFirstName" id="userFirstName" value={userFirstName} readOnly/>
                     </UserDiv>
                     <UserDiv className={styles.userLastName}>
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userLastName">Sobrenome</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userLastName" id="userLastName" value={userLastName}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userLastName" id="userLastName" value={userLastName} readOnly/>
                     </UserDiv>
                 </div>
                 <div className={styles.row}>
@@ -43,14 +44,14 @@ export const UserData = () => {
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userEmail">Email</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="email" name="userEmail" id="userEmail" value={userEmail}/>
+                        <ProfileInput className={styles.userInput} type="email" name="userEmail" id="userEmail" value={userEmail} readOnly/>
                     </UserDiv>
                     <UserDiv className={styles.userPassword}>
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userPassword">Senha</Label>
                             <Span>Mudar</Span>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="password" name="userPassword" id="userPassword" value={userPassword}/>
+                        <ProfileInput className={styles.userInput} type="password" name="userPassword" id="userPassword" value={userPassword} readOnly/>
                     </UserDiv>
                 </div>
                 <div className={styles.row}>
@@ -58,13 +59,13 @@ export const UserData = () => {
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userCPF">CPF</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userCPF" id="userCPF" value={userCPF}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userCPF" id="userCPF" value={userCPF} readOnly/>
                     </UserDiv>
                     <UserDiv className={styles.userDTNasc}>
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userDTNasc">Data de Nascimento</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="date" name="userDTNasc" id="userDTNasc" value={userDTNasc}/>
+                        <ProfileInput className={styles.userInput} type="date" name="userDTNasc" id="userDTNasc" value={userDTNasc} readOnly/>
                     </UserDiv>
                 </div>
             </aside>
@@ -74,14 +75,13 @@ export const UserData = () => {
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userPhone">Telefone</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userPhone" id="userPhone" value={userPhone}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userPhone" id="userPhone" value={userPhone} readOnly/>
                         
                     </UserDiv>
                 </div>
                 <div className={styles.row}>
                     <UserDiv className={styles.userRadio}>
                         <Label htmlFor="userOption">Prestar serviço?</Label>
-
                         {userToggleOption==="true" ? (
                             <div className={styles.userRadioOption}>
                                 <LabelToggle>
@@ -91,7 +91,7 @@ export const UserData = () => {
                                 </LabelToggle>
                                 <LabelToggle>
                                 <RadioButton type="radio"
-                                    id="nao" name="userOption" value="Não" defaultChecked />
+                                    id="nao" name="userOption" value="Não"/>
                                     Não
                                 </LabelToggle>
                             </div>
@@ -100,16 +100,19 @@ export const UserData = () => {
                         ) : (
                             <div className={styles.userToggleOption}>
                                 <LabelToggle>
-                                    <input type="radio" id="userToggle" name="userToggle" value="Sim" />
+                                    <input type="radio" id="userToggle" name="userToggle" value="Sim" readOnly/>
                                     Sim
                                 </LabelToggle>
                                 <LabelToggle>
-                                    <input type="radio" id="userToggle" name="userToggle" value="Não" defaultChecked />
+                                    <input type="radio" id="userToggle" name="userToggle" value="Não" defaultChecked readOnly/>
                                     Não
                                 </LabelToggle>
                             </div>
                         )}
                     </UserDiv>
+                </div>
+                <div className={styles.row}>
+                    <Submit>Editar</Submit>
                 </div>
             </aside>
             <aside className={styles.profileAsideR}>
@@ -121,13 +124,13 @@ export const UserData = () => {
                         <div className={styles.labelSVG}>
                             <Label htmlFor="useruserCEP">Código Postal</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userCEP" id="userCEP" value={userCEP}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userCEP" id="userCEP" value={userCEP} readOnly/>
                     </UserDiv>
                     <UserDiv className={styles.userStreet}>
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userStreet">Rua</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userStreet" id="userStreet" value={userStreet}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userStreet" id="userStreet" value={userStreet} readOnly/>
                     </UserDiv>
                 </div>
                 <div className={styles.row}>
@@ -135,13 +138,13 @@ export const UserData = () => {
                         <div className={styles.labelSVG}>
                             <Label htmlFor="useruserCEP">Número</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userHouseNumber" id="userHouseNumber" value={userHouseNumber}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userHouseNumber" id="userHouseNumber" value={userHouseNumber} readOnly/>
                     </UserDiv>
                     <UserDiv className={styles.userBairro}>
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userBairro">Bairro</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userBairro" id="userBairro" value={userBairro}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userBairro" id="userBairro" value={userBairro} readOnly/>
                     </UserDiv>
                 </div>
                 <div className={styles.row}>
@@ -149,13 +152,13 @@ export const UserData = () => {
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userCity">Cidade</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userCity" id="userCity" value={userCity}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userCity" id="userCity" value={userCity} readOnly/>
                     </UserDiv>
                     <UserDiv className={styles.userState}>
                         <div className={styles.labelSVG}>
                             <Label htmlFor="userState">Estado</Label>
                         </div>  
-                        <ProfileInput className={styles.userInput} type="text" name="userState" id="userState" value={userState}/>
+                        <ProfileInput className={styles.userInput} type="text" name="userState" id="userState" value={userState} readOnly/>
                     </UserDiv>
                 </div>
             </aside>

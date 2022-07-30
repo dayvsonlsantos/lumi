@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHome6Fill, RiUser3Fill } from "react-icons/ri";
 import { ToggleMode } from "../ToggleMode/ToggleMode";
+import { TiGroup } from "react-icons/ti";
 
 import { Search, InputNav, IconButton } from "../../themes/LocalStyles";
 
@@ -43,13 +44,21 @@ function Header({ event, imgsrc, svg_set_color, themebutton, openModal }) {
       <section className={styles.right}>
         <Link to="/">
           <IconButton>
-            <RiHome6Fill style={{ color: "#ffffff", fontSize: "1.4rem" }} />
+            <RiHome6Fill style={{ color: "#F3F3F3", fontSize: "1.4rem" }} />
           </IconButton>
         </Link>
 
         <IconButton onClick={openModal}>
-          <RiUser3Fill style={{ color: "#ffffff", fontSize: "1.4rem" }} />
+          <RiUser3Fill style={{ color: "#F3F3F3", fontSize: "1.4rem" }} />
         </IconButton>
+
+        <Link to="/equipe">
+          <IconButton>
+            <TiGroup style={{ color: "#F3F3F3", fontSize: "1.4rem" }} />
+          </IconButton>
+        </Link>
+
+        
       </section>
 
       <section>

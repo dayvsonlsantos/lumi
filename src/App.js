@@ -8,6 +8,7 @@ import "./Styles/main.scss";
 //Pages
 import Home from "./Pages/home/Home";
 import Profile from "./Pages/home/Profile";
+import Equipe from "./Pages/Equipe/Equipe";
 
 //Componentes
 import Navbar from "./Components/Navbar/Navbar";
@@ -278,6 +279,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/perfil" element={<Profile />} />
+          <Route path="/equipe" element={<Equipe />} />
         </Routes>
       </Router>
     </ThemeProvider>
