@@ -10,6 +10,10 @@ export const DarkMode = styled.div`
   @media (max-width: 1200px) {
     display: none;
   }
+  > svg{
+    color: ${({ theme }) => theme.purpleOP};
+    font-size: 2rem;
+  }
 `;
 
 export const DarkModeMobile = styled.div`
@@ -31,5 +35,10 @@ export const DarkModeMobile = styled.div`
     > span{
       margin-left: 1rem;
     }
+    > svg{
+      color: ${({ theme }) => theme.purpleOP};
+      font-size: 2rem;
+    }
   }
+  
 `;

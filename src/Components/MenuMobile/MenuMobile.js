@@ -1,52 +1,60 @@
 import React from "react";
-import { Container, MenuItems, SVGMenuMobile } from "./MenuMobileDesign";
+
+import { Container, MenuItems, Icon } from "./Style.MenuMobile";
+
+//Icones dos botões
 import { CgClose } from "react-icons/cg";
 import { RiHome6Fill, RiUser3Fill } from "react-icons/ri";
 import { TiGroup } from "react-icons/ti";
-import { ToggleModeMobile } from "../ToggleMode/ToggleMode";
-import { Link } from "react-router-dom";
 
-const Size = { fontSize: "2rem" };
+//Modo escuro
+import { ToggleModeMobile } from "../ToggleMode/ToggleMode";
+
+//Importando Link
+import { Link } from "react-router-dom";
 
 function MenuMobile({
   closeModalMenuMobile,
   menuMobileIsVisible,
   themebutton,
-  event,
-  openModal,
+  themeToggler,
+  openModalSign,
 }) {
+
+  const Size = { fontSize: "2rem" };
 
   function AbrirLogin(){
     closeModalMenuMobile();
-    openModal();
+    openModalSign();
   }
   return (
+
     <Container menuMobileIsVisible={menuMobileIsVisible}>
       
       <CgClose size={45} onClick={closeModalMenuMobile}/>
       
       <MenuItems>
         <Link to="/" onClick={closeModalMenuMobile}>
-          <SVGMenuMobile>
+          <Icon>
             <RiHome6Fill style={Size} />
             <span>Inicio</span>
-          </SVGMenuMobile>
+          </Icon>
         </Link>
 
-        <SVGMenuMobile onClick={AbrirLogin}>
+        <Icon onClick={AbrirLogin}>
           <RiUser3Fill style={Size} />
           <span>Login</span>
-        </SVGMenuMobile>
+        </Icon>
 
-        <SVGMenuMobile>
-          <ToggleModeMobile theme={themebutton} toggleTheme={event} />
-        </SVGMenuMobile>
+        <Icon>
+          <ToggleModeMobile theme={themebutton} toggleTheme={themeToggler} />
+        </Icon>
 
         <Link to="/equipe" onClick={closeModalMenuMobile}>
-          <SVGMenuMobile>
+          <Icon>
             <TiGroup style={Size} />
             <span>Desenvolvedores</span>
-          </SVGMenuMobile>
+          </Icon>
         </Link>
       </MenuItems>
     </Container>

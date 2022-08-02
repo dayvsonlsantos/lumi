@@ -7,7 +7,7 @@ import "./Styles/main.scss";
 
 //Pages
 import Home from "./Pages/home/Home";
-import Profile from "./Pages/home/Profile";
+import Perfil from "./Pages/Perfil/Perfil";
 import Equipe from "./Pages/Equipe/Equipe";
 
 //Componentes
@@ -239,10 +239,10 @@ function App() {
       <Router>
 
         <Navbar
-          event={themeToggler} //Função(themeToggler)
+          themeToggler={themeToggler} //Função(themeToggler)
           imgsrc={logo} //logo
           themebutton={theme} //tema do botão (sol ou lua)
-          openModal={openModalSign} //Abrir modal de login/cad 
+          openModalSign={openModalSign} //Abrir modal de login/cad 
         />
 
         {/* 
@@ -277,7 +277,7 @@ function App() {
         
         <Routes>
           <Route path="/" element={<Home svgColor={svgColor} />} />
-          <Route path="/perfil" element={<Profile />} />
+          <Route path="/perfil" element={<Perfil />} />
           <Route path="/equipe" element={<Equipe />} />
         </Routes>
       </Router>

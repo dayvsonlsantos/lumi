@@ -47,7 +47,7 @@ export const MenuItems = styled.div`
   }
 `;
 
-export const SVGMenuMobile = styled.div`
+export const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

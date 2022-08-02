@@ -91,3 +91,18 @@ export const Links = styled.div`
       }
     }
 `
+
+export const Gmail = styled.img.attrs({
+  src: "https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white",
+  alt: "Badge Gmail",
+})``
+
+export const Github = styled.img.attrs({
+  src: "https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white",
+  alt: "Badge Github"
+})``
+
+export const Linkedin = styled.img.attrs({
+  src: "https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white",
+  alt: "Badge Linkedin"
+})``

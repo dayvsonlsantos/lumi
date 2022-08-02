@@ -1,7 +1,13 @@
 import "../../../Styles/localStyles.scss";
+
 import React, { useState } from "react";
+
+//Icones
 import { CgClose } from "react-icons/cg";
+
+
 import { ModalDiv, Submit } from "../../../themes/LocalStyles";
+
 import InputFieldCP from "./InputFieldCP/InputFieldCP";
 
 function ChangePassword({ closeModalCP }) {

@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
+//Icones
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHome6Fill, RiUser3Fill } from "react-icons/ri";
-import { ToggleMode } from "../ToggleMode/ToggleMode";
 import { TiGroup } from "react-icons/ti";
 import { CgMenu } from "react-icons/cg";
+
+//Modo escuro
+import { ToggleMode } from "../ToggleMode/ToggleMode";
 
 //Componentes
 import {
@@ -16,12 +21,16 @@ import {
   NavButtons,
   IconStyle,
   MenuMobileIcon,
-} from "./NavbarDesign";
+} from "./Style.Navbar";
 
+//Componente Menu Mobile
 import MenuMobile from "../MenuMobile/MenuMobile";
-import { useState } from "react";
 
-function Header({ event, imgsrc, themebutton, openModal }) {
+
+function Header({ themeToggler, imgsrc, themebutton, openModalSign }) {
+  
+  //Abertura e Fechamento do menu para versão mobile
+
   const [menuMobileIsVisible, setMenuMobileisVisible] = useState(false);
 
   function openModalMenuMobile() {
@@ -39,8 +48,8 @@ function Header({ event, imgsrc, themebutton, openModal }) {
           closeModalMenuMobile={closeModalMenuMobile}
           menuMobileIsVisible={menuMobileIsVisible}
           themebutton={themebutton}
-          event={event}
-          openModal={openModal}
+          themeToggler={themeToggler}
+          openModalSign={openModalSign}
         />
       ) : null}
       <Container>
@@ -51,7 +60,7 @@ function Header({ event, imgsrc, themebutton, openModal }) {
 
         <Center>
           
-          <ToggleMode theme={themebutton} toggleTheme={event} />
+          <ToggleMode theme={themebutton} toggleTheme={themeToggler} />
 
           <Search>
             
@@ -86,7 +95,7 @@ function Header({ event, imgsrc, themebutton, openModal }) {
             </IconStyle>
           </Link>
           
-          <IconStyle onClick={openModal}>
+          <IconStyle onClick={openModalSign}>
             <RiUser3Fill />
             <span>Login</span>
           </IconStyle>

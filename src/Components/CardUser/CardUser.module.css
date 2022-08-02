@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/* profileAsideL: */
+
+.userFirstName{
+    width: 35%;
+}
+
+.userLastName{
+    width: 60%;
+}
+
+.userEmail{
+    width: 60%;
+}
+
+.userPassword{
+    width: 35%;
+}
+
+.userCPF{
+    width: 40%;
+}
+
+.userDTNasc{
+    width: 55%;
+}
+
+
+/* profileAsideM: */
+
+.userPhone{
+    width: 95%;
+}
+
+.userServ{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* profileAsideR: */
+
+.userCEP{
+    width: 35%;
+}
+
+.userStreet{
+    width: 60%;
+}
+
+.userHouseNumber{
+    width: 25%;
+}
+
+.userBairro{
+    width: 65%;
+}
+
+.userCity{
+    width: 50%;
+}
+
+.userState{
+    width: 20%;
+}
+
+/* To All: */
+
+.labelSVG{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.userInput{
+    width: 100%;
+}

@@ -1,17 +1,5 @@
 import styled from "styled-components";
 
-//Navbar
-
-
-
-
-
-// ------------------------------------------------------------
-
-//Background Icon
-
-
-
 // ------------------------------------------------------------
 
 // LoginModal e RegisterModal
