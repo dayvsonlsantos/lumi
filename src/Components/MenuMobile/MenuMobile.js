@@ -10,7 +10,7 @@ const Size = { fontSize: "2rem" };
 
 function MenuMobile({
   closeModalMenuMobile,
-  menuIsVisible,
+  menuMobileIsVisible,
   themebutton,
   event,
   openModal,
@@ -21,8 +21,10 @@ function MenuMobile({
     openModal();
   }
   return (
-    <Container menuIsVisible={menuIsVisible}>
-      <CgClose size={45} onClick={closeModalMenuMobile} />
+    <Container menuMobileIsVisible={menuMobileIsVisible}>
+      
+      <CgClose size={45} onClick={closeModalMenuMobile}/>
+      
       <MenuItems>
         <Link to="/" onClick={closeModalMenuMobile}>
           <SVGMenuMobile>

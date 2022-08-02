@@ -3,90 +3,95 @@ import { BiSearchAlt } from "react-icons/bi";
 import { RiHome6Fill, RiUser3Fill } from "react-icons/ri";
 import { ToggleMode } from "../ToggleMode/ToggleMode";
 import { TiGroup } from "react-icons/ti";
-import { CgMenuRight } from "react-icons/cg";
+import { CgMenu } from "react-icons/cg";
 
 //Componentes
 import {
   Container,
-  SectionL,
-  SectionC,
+  Logo,
+  Center,
   Search,
-  SVG,
+  SearchIcon,
   InputNav,
-  SectionR,
-  IconButton,
-  SectionMenuMobile,
-  HideDarkMode,
+  NavButtons,
+  IconStyle,
+  MenuMobileIcon,
 } from "./NavbarDesign";
 
 import MenuMobile from "../MenuMobile/MenuMobile";
 import { useState } from "react";
 
 function Header({ event, imgsrc, themebutton, openModal }) {
-  const [menuIsVisible, setMenuisVisible] = useState(false); //Estado inicial do modal, false, pois inicia-se fechado
+  const [menuMobileIsVisible, setMenuMobileisVisible] = useState(false);
 
-  //Função para abertura e fechamento do modal Mudar Senha, Função enviada para o componente navbar
   function openModalMenuMobile() {
-    setMenuisVisible(true);
+    setMenuMobileisVisible(true);
   }
 
-  //Função enviada para o componente modal
   function closeModalMenuMobile() {
-    setMenuisVisible(false);
+    setMenuMobileisVisible(false);
   }
 
   return (
     <>
-      {menuIsVisible ? (
+      {menuMobileIsVisible ? (
         <MenuMobile
           closeModalMenuMobile={closeModalMenuMobile}
-          menuIsVisible={menuIsVisible}
+          menuMobileIsVisible={menuMobileIsVisible}
           themebutton={themebutton}
           event={event}
           openModal={openModal}
         />
       ) : null}
       <Container>
+        
         <Link to="/">
-          <SectionL>
-            <img src={imgsrc} alt="Logo - Lumi" />
-          </SectionL>
+          <Logo src={imgsrc} alt="Logo - Lumi" />
         </Link>
 
-        <SectionC>
-          <HideDarkMode>
-            <ToggleMode theme={themebutton} toggleTheme={event} />
-          </HideDarkMode>
+        <Center>
+          
+          <ToggleMode theme={themebutton} toggleTheme={event} />
+
           <Search>
-            <SVG>
+            
+            <SearchIcon>
               <BiSearchAlt />
-            </SVG>
+            </SearchIcon>
+
             <InputNav />
           </Search>
-          <SectionMenuMobile>
-            <IconButton>
-              <CgMenuRight onClick={openModalMenuMobile} />
-            </IconButton>
-          </SectionMenuMobile>
-        </SectionC>
 
-        <SectionR>
+          <MenuMobileIcon onClick={openModalMenuMobile}>
+            <IconStyle>
+              <CgMenu />
+            </IconStyle>
+          </MenuMobileIcon>
+
+        </Center>
+
+        <NavButtons>
+          
           <Link to="/">
-            <IconButton>
+            <IconStyle>
               <RiHome6Fill />
-            </IconButton>
+              <span>Início</span>
+            </IconStyle>
           </Link>
-
-          <IconButton onClick={openModal}>
-            <RiUser3Fill />
-          </IconButton>
 
           <Link to="/equipe">
-            <IconButton>
+            <IconStyle>
               <TiGroup />
-            </IconButton>
+              <span>Devs</span>
+            </IconStyle>
           </Link>
-        </SectionR>
+          
+          <IconStyle onClick={openModal}>
+            <RiUser3Fill />
+            <span>Login</span>
+          </IconStyle>
+          
+        </NavButtons>
       </Container>
     </>
   );

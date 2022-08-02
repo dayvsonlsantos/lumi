@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { ModalDiv, Submit } from "../../../themes/LocalStyles";
 import InputFieldLog from "./InputFieldLog/InputFieldLog";
+import {Link } from "react-router-dom";
 
 function LoginModal({
   setRegisterForm,
@@ -97,6 +98,7 @@ function LoginModal({
         <button className="esqueciasenha" onClick={openModalPass} >
         Esqueci a senha
         </button>
+        <Link to="/perfil"><p>Clicar</p></Link>
         <Submit className="submit-btn">Login</Submit>
         <p>Ainda não tem uma conta?</p>
         <button className="change-page-btn" onClick={setRegisterForm}>

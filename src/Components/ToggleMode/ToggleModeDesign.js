@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 export const DarkMode = styled.div`
   display: flex;
-  width: 100%;
+  width: 5%;
   align-items: center;
   justify-content: center;
   background: none;
   cursor: pointer;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const DarkModeMobile = styled.div`

@@ -78,4 +78,16 @@ export const Links = styled.div`
     align-self: center;
     flex-direction: row;
     margin-top: 1.5rem;
+    img{
+      display: flex;
+      width: 100%;
+      display: flex;
+      border-radius: 12px;
+    }
+    a{
+      margin: 0 0.5rem;
+      @media (max-width: 400px){
+        margin: 0 0.2rem;
+      }
+    }
 `

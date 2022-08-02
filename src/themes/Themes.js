@@ -11,6 +11,8 @@ export const lightTheme = {
   user_input: "#ffffff",
   user_input_value: "#7D7D7D",
   svgVariant: "#ffffff",
+  grayOp: "#F3F3F3",
+  textColor01: "#ffffff",
 };
 
 export const darkTheme = {
@@ -26,4 +28,6 @@ export const darkTheme = {
   user_input: "#403A4F",
   user_input_value: "#D2D2D2",
   svgVariant: "#02001F",
+  grayOp: "#201B2C",
+  textColor01: "#403A4F",
 };

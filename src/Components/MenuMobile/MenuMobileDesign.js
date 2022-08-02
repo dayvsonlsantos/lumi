@@ -22,6 +22,8 @@ export const Container = styled.section`
     position: absolute;
     top: 1rem;
     right: 1rem;
+    color: ${({ theme }) => theme.textColor01};
+    cursor: pointer;
   }
   
 `;
