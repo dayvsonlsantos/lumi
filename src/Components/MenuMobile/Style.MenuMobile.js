@@ -51,7 +51,7 @@ export const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme.view_background};
+  background-color: ${({ theme }) => theme.grayOp};
   width: 100%;
   padding: 1rem;
   border-radius: 12px;

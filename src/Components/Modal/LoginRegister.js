@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import RegisterModal from "./RegisterModal/RegisterModal";
 import LoginModal from "./LoginModal/LoginModal";
+import { Backdrop } from "./Styles.Modal";
 
-function Modal({ closeModalSign, inputValueColor, bgColorG, openModalPass }) {
+function LoginRegister({ closeModalSign, openModalPass }) {
   
 
   //Abertura e fechamento entre os modals: RegisterModal e LoginModal
@@ -24,7 +25,7 @@ function Modal({ closeModalSign, inputValueColor, bgColorG, openModalPass }) {
 
 
   return (
-    <div className="backdrop"> {/*localStyles.scss*/}
+    <Backdrop>
       {isLogin ? (
        
         <LoginModal
@@ -32,23 +33,17 @@ function Modal({ closeModalSign, inputValueColor, bgColorG, openModalPass }) {
           closeModalSign={closeModalSign}
           openModalPass={openModalPass}
 
-          /*Alterar cor do input e seu valor*/
-          inputValueColor={inputValueColor}
-          bgColorG={bgColorG}
         />
       ) : (
         <RegisterModal
           setLoginForm={setLoginForm}
           closeModalSign={closeModalSign}
 
-          /*Alterar cor do input e seu valor*/
-          inputValueColor={inputValueColor}
-          bgColorG={bgColorG}
         />
       )}
-    </div>
+    </Backdrop>
   );
 }
 
-export default Modal;
+export default LoginRegister;
 

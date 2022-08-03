@@ -1,5 +1,4 @@
-import "../../../../Styles/inputFields.css";
-import "../../../../Styles/localStyles.scss";
+import { InputGroup } from "../../Styles.Modal";
 
 const InputFieldCode = (props) => {
 
@@ -21,7 +20,7 @@ const InputFieldCode = (props) => {
 
     /* Css: inputFields.css */
 
-    <div className="inputFields">
+    <InputGroup>
       <label htmlFor={id}>{label}</label>
       <input
         
@@ -29,10 +28,8 @@ const InputFieldCode = (props) => {
 
         {...inputProps}
         onChange={onChange}
-        className="inputFields inputResponsiv" /* Classe inputResponsiv: localStyles.scss */
-        style={{ color: inputValueColor, background: bgColorG }}
       />
-    </div>
+    </InputGroup>
   );
 };
 

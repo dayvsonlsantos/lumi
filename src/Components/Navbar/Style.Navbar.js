@@ -8,7 +8,7 @@ export const Container = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border-bottom: 1px solid ${({ theme }) => theme.view_background};
+  border-bottom: 1px solid ${({ theme }) => theme.grayOp};
   transition: all 0.5s ease;
   box-sizing: border-box;
   overflow: auto;
@@ -53,7 +53,7 @@ export const Search = styled.div`
   width: 100%;
   height: 3rem;
   padding: 1rem;
-  background-color: ${({ theme }) => theme.view_background};
+  background-color: ${({ theme }) => theme.grayOp};
   transition: all 0.5s ease;
   margin-left: 1rem;
   @media (max-width: 800px) {
@@ -85,14 +85,14 @@ export const InputNav = styled.input.attrs({
         border-radius: 12px;
         padding: 0.5rem 0.8rem;
         width: 100%;
-        background-color: ${({ theme }) => theme.view_background};
-        color: ${({ theme }) => theme.view_text};
+        background-color: ${({ theme }) => theme.grayOp};
+        color: ${({ theme }) => theme.gray};
         transition: all .5s ease;
         &:focus-visible {
           outline: none;
         }
         &&::placeholder {
-          color: "${({ theme }) => theme.view_text};"
+          color: "${({ theme }) => theme.gray};"
           opacity: 0.7;
         }`;
 
@@ -115,7 +115,7 @@ export const NavButtons = styled.section`
 `;
 
 export const IconStyle = styled.div`
-  background-color: ${({ theme }) => theme.background_modal};
+  background-color: ${({ theme }) => theme.purpleOP};
   color: ${({ theme }) => theme.svgVariant};
   font-size: 1.4rem;
   transition: all 0.5s ease;

@@ -50,7 +50,7 @@ export const Submit = styled.button`
   width: 8rem;
   border-radius: 12px;
   border: none;
-  background-color: ${({ theme }) => theme.purple_variant};
+  background-color: ${({ theme }) => theme.purpleOP};
   color: #e8f1f2;
   padding: 1rem;
   text-transform: uppercase;
@@ -73,7 +73,7 @@ export const ProfileInput = styled.input`
   font-size: 0.8em;
   padding: 0.5rem;
   background-color: ${({ theme }) => theme.user_input};
-  color: ${({ theme }) => theme.user_input_value};
+  color: ${({ theme }) => theme.gray};
   transition: all 0.5s ease;
   &:focus-visible {
     outline: none;
@@ -97,7 +97,7 @@ export const Span = styled.span`
 
 export const LabelToggle = styled.label`
   background-color: ${({ theme }) => theme.user_input};
-  color: ${({ theme }) => theme.user_input_value};
+  color: ${({ theme }) => theme.gray};
   transition: all 0.5s ease;
   margin-left: 0.8rem;
   border-radius: 12px;

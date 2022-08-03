@@ -1,12 +1,10 @@
-import "../../../Styles/localStyles.scss";
-
 import React, { useState } from "react";
 
 //Icones
 import { CgClose } from "react-icons/cg";
 
 import InputFieldCP from "./InputFieldCP/InputFieldCP";
-import { Backdrop, Container, Form, FormTop, CloseButton, Submit } from "../../Modal/Styles.Modal";
+import { Backdrop, Container, FormTop, CloseButton, Submit } from "../../Modal/Styles.Modal";
 
 function ChangePassword({ closeModalCP }) {
   

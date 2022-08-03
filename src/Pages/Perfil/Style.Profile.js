@@ -13,7 +13,7 @@ export const ProfileBG = styled.div`
   margin-top: 2rem;
   width: 10rem;
   height: 10rem;
-  background: ${({ theme }) => theme.view_background};
+  background: ${({ theme }) => theme.grayOp};
   border-radius: 100%;
   cursor: pointer;
   display: flex;
@@ -28,7 +28,7 @@ export const ProfileSectionBG = styled.div`
   height: 30rem;
   margin-top: 2rem;
   margin-bottom: 4rem;
-  background: ${({ theme }) => theme.view_background};
+  background: ${({ theme }) => theme.grayOp};
   border-radius: 12px;
   display: flex;
   align-items: center;

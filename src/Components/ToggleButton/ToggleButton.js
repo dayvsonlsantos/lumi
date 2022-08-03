@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const InputToggle = styled.input`
-  background: ${({ theme }) => theme.background_modal};
+  background: ${({ theme }) => theme.purpleVariant};
   width: 3rem;
   height: 1.5rem;
   appearance: none;
@@ -12,7 +12,7 @@ export const InputToggle = styled.input`
   position: relative;
   
   &:before {
-    background: ${({ theme }) => theme.view_background};
+    background: ${({ theme }) => theme.grayOp};
     content: '';
     width: 1.5rem;
     height: 1.5rem;

@@ -6,8 +6,8 @@ export const Service = styled.div`
   border-radius: 12px;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  background-color: ${({ theme }) => theme.view_background};
-  color: ${({ theme }) => theme.view_text};
+  background-color: ${({ theme }) => theme.grayOp};
+  color: ${({ theme }) => theme.gray};
   transition: all 0.5s ease;
   box-sizing: border-box;
   display: flex;
@@ -60,7 +60,7 @@ export const About = styled.div`
 `;
 
 export const ServName = styled.h2`
-  color: ${({ theme }) => theme.view_text};
+  color: ${({ theme }) => theme.gray};
   font-weight: 500;
   font-size: 1.2rem;
   text-align: center;

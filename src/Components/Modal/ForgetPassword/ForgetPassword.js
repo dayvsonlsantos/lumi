@@ -1,10 +1,9 @@
-import "../../../Styles/localStyles.scss";
 import React, { useState } from "react";
 import { CgClose } from "react-icons/cg";
-import { ModalDiv, Submit } from "../../../themes/LocalStyles";
 import InputFieldFP from "./InputFieldFP/InputFieldFP";
+import { Backdrop, Container, FormTop, CloseButton, Submit } from "../Styles.Modal";
 
-function ForgetPassword({ closeModalPass, bgColorG, inputValueColor, openModalCode }) {
+function ForgetPassword({ closeModalPass, openModalCode }) {
   
     //Verificação dos campos do formulário:
 
@@ -20,7 +19,6 @@ function ForgetPassword({ closeModalPass, bgColorG, inputValueColor, openModalCo
         const inputs = [
             {
             id: "emailFP",
-            className: "input",
             type: "email",
             name: "emailFP",
             placeholder: "Informe o seu e-mail",
@@ -30,7 +28,6 @@ function ForgetPassword({ closeModalPass, bgColorG, inputValueColor, openModalCo
             },
             {
             id: "cpfFP",
-            className: "input",
             type: "text",
             name: "cpfFP",
             placeholder: "Informe o seu CPF",
@@ -65,32 +62,28 @@ function ForgetPassword({ closeModalPass, bgColorG, inputValueColor, openModalCo
     
       
       /* Css da página: localStyles.scss */
-    <div className="backdrop">
-        <ModalDiv className="modal"> 
+    <Backdrop>
+        <Container> 
             <form onSubmit={handleSubmit}>
-                <div className="header_form"> 
-                <h1 className="h1_modalFP">Recuperar a senha</h1>
-                <button className="close-modal-btn" onClick={closeModalPass}> 
+                <FormTop> 
+                <h1>Recuperar a senha</h1>
+                <CloseButton onClick={closeModalPass}> 
                     <CgClose />
-                </button>
-                </div>
-                <div className="FPInputDiv">
+                </CloseButton>
+                </FormTop>
                 {inputs.map((input) => (
                     <InputFieldFP
                     key={input.id}
                     {...input}
                     value={values[input.name]}
                     onChange={onChange}
-                    inputValueColor={inputValueColor}
-                    bgColorG={bgColorG}
                     />
                 ))}
-                </div>
                 <p onClick={openModalCode} style={{cursor: "pointer"}}>Clicar</p>
-                <Submit className="submit-btn">Enviar</Submit>
+                <Submit>Enviar</Submit>
             </form>
-        </ModalDiv>
-    </div>
+        </Container>
+    </Backdrop>
   );
 }
 

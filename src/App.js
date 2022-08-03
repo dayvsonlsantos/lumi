@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 
 //CSS
-import "./Styles/main.scss";
+import "./Styles/main.css";
 
 //Pages
 import Home from "./Pages/home/Home";
@@ -22,7 +22,7 @@ import logolight from "./Assets/logo/icon_lumi.svg";
 import logodark from "./Assets/logo/icon_lumi_dark.svg";
 
 //Modal
-import Modal from "./Components/Modal/Modal";
+import LoginRegister from "./Components/Modal/LoginRegister";
 import ForgetPassword from "./Components/Modal/ForgetPassword/ForgetPassword";
 import CodeRecoverPW from "./Components/Modal/CodeRecoverPW/CodeRecoverPW";
 import RecoverPassword from "./Components/Modal/RecoverPassword/RecoverPassword";
@@ -251,7 +251,7 @@ function App() {
           - Enviar a cor para o input e p/ o seu valor
           - 
         */}
-        {isModalSignOpen ? <Modal closeModalSign={closeModalSign} bgColorG={bgColorG} inputValueColor={inputValueColor}  openModalPass={openModalPass} /> : null}
+        {isModalSignOpen ? <LoginRegister closeModalSign={closeModalSign} openModalPass={openModalPass} /> : null}
 
         {/* 
           Abrir Modal ForgetPassword:

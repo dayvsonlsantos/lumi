@@ -62,8 +62,8 @@ export const AboutTeam = styled.div`
   text-indent: 2rem;
   text-align: justify;
   border-radius: 12px;
-  background-color: ${({ theme }) => theme.view_background};
-  color: ${({ theme }) => theme.user_input_value};
+  background-color: ${({ theme }) => theme.grayOp};
+  color: ${({ theme }) => theme.gray};
   transition: all 0.5s ease;
   @media (max-width: 1200px){
     order: 2;

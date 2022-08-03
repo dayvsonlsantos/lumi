@@ -1,6 +1,5 @@
-import "../../../../Styles/inputFields.css";
-import "../../../../Styles/localStyles.scss";
 import { useState } from "react";
+import { InputGroup } from "../../Styles.Modal";
 
 const FormLoginInput = (props) => {
   const [focused, setFocused] = useState(false);
@@ -12,8 +11,6 @@ const FormLoginInput = (props) => {
       onChange,
       id,
       errorMessage,
-      inputValueColor,
-      inputColor,
       ...inputProps
     } = props;
 
@@ -32,7 +29,7 @@ const FormLoginInput = (props) => {
 
     /* Css: inputFields.css */
 
-    <div className="inputFields">
+    <InputGroup>
       <label htmlFor={id}>{label}</label>
       <input
         
@@ -42,11 +39,9 @@ const FormLoginInput = (props) => {
         onChange={onChange}
         onBlur={handleFocus}
         focused={focused.toString()}
-        className="inputFields inputResponsiv" /* Classe inputResponsiv: localStyles.scss */
-        style={{ color: inputValueColor, background: inputColor }}
       />
-      <span className="span_inputFields ">{errorMessage}</span>
-    </div>
+      <span>{errorMessage}</span>
+    </InputGroup>
   );
 };
 

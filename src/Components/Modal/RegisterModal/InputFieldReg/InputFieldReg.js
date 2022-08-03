@@ -1,7 +1,6 @@
-import "../../../../Styles/inputFields.css";
-import "../../../../Styles/localStyles.scss";
 import { useState } from "react";
 import {InputToggle} from "../../../ToggleButton/ToggleButton"
+import { InputGroup, Toggle } from "../../Styles.Modal";
 
 const FormInput = (props) => {
   
@@ -17,8 +16,6 @@ const FormInput = (props) => {
       id,
       errorMessage,
       ChangeToggleButton,
-      inputValueColor,
-      bgColorG,
       toggleButtonOption,
       ...inputProps
     } = props;
@@ -44,7 +41,7 @@ const FormInput = (props) => {
   */
 
   return label === "Prestar serviço ?" ? (
-    <div className="toggleButton_div">
+    <Toggle>
       <label htmlFor="toggleButton">Prestar serviço?</label>
 
       {toggleButtonOption==="true" ? (
@@ -65,7 +62,7 @@ const FormInput = (props) => {
 
         />
         
-        <span className="regSpanOption" style={{background: bgColorG, color: inputValueColor}}>Sim</span>
+        <span>Sim</span>
         </div>
         
       ) : (
@@ -83,7 +80,7 @@ const FormInput = (props) => {
           onClick={ChangeToggleButton}
 
         />
-        <span className="regSpanOption" style={{background: bgColorG, color: inputValueColor}}>Não</span>
+        <span className="regSpanOption">Não</span>
         </div>
         /*
           Essa verificação ocorre para seja mostrado na tela, o mesmo como foi enviado.
@@ -91,10 +88,10 @@ const FormInput = (props) => {
             - Se for enviado como "false", o botão tem que está desativado.
         */
       )}
-    </div>
+    </Toggle>
 
   ) : (
-    <div className="inputFields">
+    <InputGroup>
       
       {/* Exibindo o label correspondente para cada input */}
       <label htmlFor={id}>{label}</label>
@@ -118,18 +115,10 @@ const FormInput = (props) => {
         }
 
         focused={focused.toString()}
-
-        className="inputFields inputResponsiv" /* Classe inputResponsiv: localStyles.scss */
-        
-        /*
-         Determina a cor do background do input e a cor do seu valor, de acordo com o modo da tela (light, dark)
-         const inputValueColor e inputColor, encontradas em App.js.
-        */
-        style={{ color: inputValueColor, background: bgColorG }}
       />
     
-      <span className="span_inputFields">{errorMessage}</span>
-    </div>
+      <span>{errorMessage}</span>
+    </InputGroup>
   );
 };
 

@@ -1,6 +1,5 @@
-import "../../../../Styles/inputFields.css";
-import "../../../../Styles/localStyles.scss";
 import { useState } from "react";
+import { InputGroup } from "../../Styles.Modal";
 
 const InputFieldRP = (props) => {
   const [focused, setFocused] = useState(false);
@@ -12,8 +11,6 @@ const InputFieldRP = (props) => {
       onChange,
       id,
       errorMessage,
-      inputValueColor,
-      bgColorG,
       ...inputProps
     } = props;
 
@@ -32,7 +29,7 @@ const InputFieldRP = (props) => {
 
     /* Css: inputFields.css */
 
-    <div className="inputFields">
+    <InputGroup>
       <label htmlFor={id}>{label}</label>
       <input
         
@@ -42,8 +39,6 @@ const InputFieldRP = (props) => {
         onChange={onChange}
         onBlur={handleFocus}
         focused={focused.toString()}
-        className="inputFields inputResponsiv" /* Classe inputResponsiv: localStyles.scss */
-        style={{ color: inputValueColor, background: bgColorG }}
 
         /*
           Faz com que o campo de confirmação de senha, já informe o span assim que clicar.
@@ -53,8 +48,8 @@ const InputFieldRP = (props) => {
           inputProps.name === "confirmPasswordRecover" && setFocused(true)
         }
       />
-      <span className="span_inputFields ">{errorMessage}</span>
-    </div>
+      <span>{errorMessage}</span>
+    </InputGroup>
   );
 };
 

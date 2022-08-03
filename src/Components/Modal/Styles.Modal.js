@@ -33,6 +33,96 @@ export const Container = styled.div`
       overflow-x: hidden;
       padding: 1rem;
     }
+    p {
+      color: white;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    width: 450px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    min-width: 80%;
+    label {
+      font-size: 0.8rem;
+    }
+    p {
+      font-size: 0.65rem;
+    }
+  }
+
+  @media only screen and (min-width: 551px) and (max-width: 700px) {
+    min-width: 60%;
+    label {
+      font-size: 0.8rem;
+    }
+    p {
+      font-size: 0.65rem;
+    }
+  }
+`;
+
+export const ContainerReg = styled.div`
+  background-color: ${({ theme }) => theme.purpleOP};
+  max-width: 50vw;
+  min-height: 50vh;
+  width: 100%;
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media screen and (max-width: 800px) {
+      overflow-y: scroll;
+      flex-wrap: nowrap;
+      max-height: 25rem;
+      padding-right: 1.2rem;
+      margin-left: 1.2rem;
+    }
+
+    aside {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      width: 100%;
+      max-width: 100%;
+
+      @media screen and (min-width: 801px) {
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 25rem;
+        padding-right: 1.2rem;
+        margin-left: 1.2rem;
+      }
+    }
+
+    p {
+      color: white;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      font-size: 0.8rem;
+    }
   }
 
   @media screen and (min-width: 900px) {
@@ -70,19 +160,19 @@ export const FormTop = styled.div`
     margin: auto;
     color: #ffffff;
     font-weight: 500;
-    
+
     @media only screen and (min-width: 551px) and (max-width: 700px) {
-        font-size: 1.4rem;
+      font-size: 1.4rem;
     }
     @media only screen and (max-width: 900px) {
-        font-size: 1.6rem;
+      font-size: 1.6rem;
     }
     @media only screen and (max-width: 500px) {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
     @media only screen and (max-width: 350px) {
-        font-size: 1rem;
-        text-align: center;
+      font-size: 1rem;
+      text-align: center;
     }
   }
 `;
@@ -107,7 +197,7 @@ export const Submit = styled.button`
   width: 8rem;
   border-radius: 12px;
   border: none;
-  background-color: ${({ theme }) => theme.purple_variant};
+  background-color: ${({ theme }) => theme.purpleVariant};
   color: #e8f1f2;
   padding: 1rem;
   text-transform: uppercase;
@@ -143,7 +233,7 @@ export const InputGroup = styled.div`
     justify-content: center;
     flex-direction: column;
     background: ${({ theme }) => theme.user_input};
-    color: ${({ theme }) => theme.user_input_value};
+    color: ${({ theme }) => theme.gray};
     margin: 1rem 0;
     width: 100%;
     border: none;
@@ -156,8 +246,8 @@ export const InputGroup = styled.div`
     :invalid[focused="true"] ~ span {
       display: block;
     }
-    ::placeholder{
-        color: ${({ theme }) => theme.placeholderOP};
+    ::placeholder {
+      color: ${({ theme }) => theme.placeholderOP};
     }
     @media screen and (min-width: 550px) and (max-width: 800px) {
       padding: 0.4rem 0.5rem;
@@ -170,7 +260,7 @@ export const InputGroup = styled.div`
   }
   > span {
     font-size: 0.8rem;
-    background-color: ${({ theme }) => theme.spanOP};
+    background-color: ${({ theme }) => theme.purpleVariant};
     border-radius: 12px;
     padding: 0.5rem;
     color: white;
@@ -184,5 +274,66 @@ export const InputGroup = styled.div`
     @media screen and (max-height: 800px) {
       font-size: 0.65rem;
     }
+  }
+`;
+
+export const Esqueciasenha = styled.div`
+  width: 8rem;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-left: auto;
+  border: none;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: none;
+  color: #ffffff;
+  cursor: pointer;
+  @media only screen and (max-width: 550px) {
+    margin-bottom: 0;
+    font-size: 0.65rem;
+  }
+`;
+
+export const ChangePage = styled.button`
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  border: none;
+  margin-top: 1rem;
+  border-radius: 12px;
+  background: none;
+  color: #ffffff;
+  cursor: pointer;
+`;
+
+export const Toggle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+
+  label {
+    margin-bottom: 0.8rem;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  span {
+    margin-left: 0.8rem;
+    border-radius: 12px;
+    text-align: center;
+    width: 3.5rem;
+    background: ${({ theme }) => theme.user_input};
+    color: ${({ theme }) => theme.gray};
   }
 `;

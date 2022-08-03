@@ -1,6 +1,5 @@
-import "../../../../Styles/inputFields.css";
-import "../../../../Styles/localStyles.scss";
 import { useState } from "react";
+import { InputGroup } from "../../Styles.Modal";
 
 const InputFieldFP = (props) => {
   const [focused, setFocused] = useState(false);
@@ -32,7 +31,7 @@ const InputFieldFP = (props) => {
 
     /* Css: inputFields.css */
 
-    <div className="inputFields">
+    <InputGroup>
       <label htmlFor={id}>{label}</label>
       <input
         
@@ -42,18 +41,13 @@ const InputFieldFP = (props) => {
         onChange={onChange}
         onBlur={handleFocus}
         focused={focused.toString()}
-        className="inputFields inputResponsiv" /* Classe inputResponsiv: localStyles.scss */
-        style={{ color: inputValueColor, background: bgColorG }}
-        /*
-          Faz com que o campo de confirmação de senha, já informe o span assim que clicar.
-          (Evita que esse span só seja exibido ao clicar em enviar)
-        */ 
+        
         onFocus={() =>
           inputProps.name === "cpfFP" && setFocused(true)
         }
       />
       <span className="span_inputFields ">{errorMessage}</span>
-    </div>
+    </InputGroup>
   );
 };
 
