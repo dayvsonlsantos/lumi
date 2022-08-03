@@ -98,7 +98,7 @@ export const InputNav = styled.input.attrs({
 
 export const NavButtons = styled.section`
   display: flex;
-  width: 25%;
+  width: 25rem;
   height: 100%;
   align-self: center;
   justify-content: center;
