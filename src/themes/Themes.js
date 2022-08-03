@@ -7,13 +7,16 @@ export const lightTheme = {
   
   purple_variant: "#7F75FF",
   span_color: "#7D7D7D",
-  user_input: "#ffffff",
-  user_input_value: "#7D7D7D",
   svgVariant: "#ffffff",
+  
   grayOp: "#F3F3F3",
   textColor01: "#ffffff",
   purple: "#7F75FF",
   purpleOP: "#564AFF",
+  user_input: "#ffffff",
+  user_input_value: "#7D7D7D",
+  placeholderOP: "#7D7D7D",
+  spanOP: "#7F75FF",
 };
 
 export const darkTheme = {
@@ -25,11 +28,15 @@ export const darkTheme = {
   
   purple_variant: "#877EFF",
   span_color: "#D3D3D3",
-  user_input: "#403A4F",
-  user_input_value: "#D2D2D2",
   svgVariant: "#02001F",
+
+  
   grayOp: "#201B2C",
   textColor01: "#403A4F",
   purple: "#564AFF",
   purpleOP: "#7F75FF",
+  user_input: "#403A4F",
+  user_input_value: "#D2D2D2",
+  placeholderOP: "#bcbcbc",
+  spanOP: "#6057e0",
 };

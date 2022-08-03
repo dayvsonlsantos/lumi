@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Backdrop = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: $backDrop;
+  background-color: rgba(0, 0, 0, 0.2);
   position: fixed;
   right: 0;
   top: 0;
@@ -13,7 +13,7 @@ export const Backdrop = styled.div`
 `;
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.background_modal};
+  background-color: ${({ theme }) => theme.purpleOP};
   max-width: 50vw;
   min-height: 50vh;
   width: 100%;
@@ -142,6 +142,8 @@ export const InputGroup = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
+    background: ${({ theme }) => theme.user_input};
+    color: ${({ theme }) => theme.user_input_value};
     margin: 1rem 0;
     width: 100%;
     border: none;
@@ -154,6 +156,9 @@ export const InputGroup = styled.div`
     :invalid[focused="true"] ~ span {
       display: block;
     }
+    ::placeholder{
+        color: ${({ theme }) => theme.placeholderOP};
+    }
     @media screen and (min-width: 550px) and (max-width: 800px) {
       padding: 0.4rem 0.5rem;
       margin: 0.6rem 0;
@@ -165,7 +170,7 @@ export const InputGroup = styled.div`
   }
   > span {
     font-size: 0.8rem;
-    background-color: #7f75ff;
+    background-color: ${({ theme }) => theme.spanOP};
     border-radius: 12px;
     padding: 0.5rem;
     color: white;
