@@ -107,65 +107,6 @@ function App() {
 
 
     /* Temas e Cores: */
-
-          //Cores padrões nos modos light e dark, dos icones SVGs
-
-            const lightPurple = { color: "#7F75FF" };
-            const darkPurple = { color: "#564AFF" };
-
-            //Definindo a cor padrão dos SVGs como darkPurple;
-            const [svgColor, setSvgColor] = useState(darkPurple); 
-
-          //-----------------------------------------------------------------------
-
-
-          //* Usados em RegisterModal e LoginModal: */
-
-                //Cores padrões nos modos light e dark, do input
-
-                  const light_bgColorG = "#F3F3F3"
-                  const dark_bgColorG = "#201B2C"
-
-                  //Definindo a cor padrão do input como light:
-                    const [bgColorG, setbgColorG] = useState(light_bgColorG);
-
-                  //Salvando o tema do input ao recarregar a página:
-                    const setModeInput = (modeInput) => {
-                      window.localStorage.setItem(light_bgColorG, modeInput);
-                      setbgColorG(modeInput)
-                    }
-                  
-                    useEffect(() => {
-                      const LocalInput = window.localStorage.getItem(light_bgColorG);
-                      LocalInput ? setbgColorG(LocalInput) : setModeInput(dark_bgColorG);
-                    }, []);
-                  
-                //-----------------------------------------------------------------------
-
-
-
-                //Cores padrões nos modos light e dark, dos *valores* input:
-
-                  const light_inputValueColor = "#7D7D7D"
-                  const dark_inputValueColor = "#ffffff"
-                
-                  //Definindo a cor padrão do *valor* input como light:
-                    const [inputValueColor, setInputValueColor] = useState(light_inputValueColor);
-
-                  //Salvando o tema do *valor* input ao recarregar a página:
-                    const setModeValueInput = (modeValueFromInput) => {
-                      window.localStorage.setItem(light_inputValueColor, modeValueFromInput);
-                      setInputValueColor(modeValueFromInput)
-                    }
-                  
-                    useEffect(() => {
-                      const LocalValueFromInput = window.localStorage.getItem(light_inputValueColor);
-                      LocalValueFromInput ? setInputValueColor(LocalValueFromInput) : setModeValueInput(dark_inputValueColor);
-                    }, []);
-
-                //-----------------------------------------------------------------------
-
-          //*-----------------------------------------------------------------------
         
 
           //Definindo o tema padrão da página:
@@ -213,19 +154,10 @@ function App() {
         if (theme === "light") {
           setMode("npmdark"); //Alterando tema para a versão dark;
           setModeLogo(logodark); //Alterando logo para a versão dark;
-          setSvgColor(lightPurple); //Alterando cor dos SVGs para a versão light (Roxo claro);
 
-          //Alterando a cor do input e value para dark:
-          setModeInput(dark_bgColorG);
-          setModeValueInput(dark_inputValueColor);
         } else {
           setMode("light"); //Alterando tema para a versão light;
           setModeLogo(logolight); //Alterando logo para a versão light;
-          setSvgColor(darkPurple); //Alterando cor dos SVGs para a versão dark (Roxo escuro);
-
-          //Alterando a cor do input e value para light:
-          setModeInput(light_bgColorG);
-          setModeValueInput(light_inputValueColor);
         }
       }
 
@@ -245,38 +177,16 @@ function App() {
           openModalSign={openModalSign} //Abrir modal de login/cad 
         />
 
-        {/* 
-          Abrir LoginModal e RegisterModal:
-          - Se modal estiver aberto, enviar a função para fechar (closeModal) 
-          - Enviar a cor para o input e p/ o seu valor
-          - 
-        */}
         {isModalSignOpen ? <LoginRegister closeModalSign={closeModalSign} openModalPass={openModalPass} /> : null}
 
-        {/* 
-          Abrir Modal ForgetPassword:
-          - Se modal estiver aberto, enviar a função para fechar (closeModalPass) 
-          - Enviar a cor para o input e p/ o seu valor
-        */}
-        {IsModalPassOpen ? <ForgetPassword closeModalPass={closeModalPass} bgColorG={bgColorG} inputValueColor={inputValueColor} openModalCode={openModalCode}/> : null}
+        {IsModalPassOpen ? <ForgetPassword closeModalPass={closeModalPass} openModalCode={openModalCode}/> : null}
 
-        {/* 
-          Abrir Modal CodeRecoverPW:
-          - Se modal estiver aberto, enviar a função para fechar (closeModalCode) 
-          - Enviar a cor para o input e p/ o seu valor
-        */}
-        {IsModalCodeOpen ? <CodeRecoverPW closeModalCode={closeModalCode} bgColorG={bgColorG} inputValueColor={inputValueColor} openModalRecover={openModalRecover} /> : null}
+        {IsModalCodeOpen ? <CodeRecoverPW closeModalCode={closeModalCode} openModalRecover={openModalRecover} /> : null}
 
-
-        {/* 
-          Abrir Modal RecoverPassword:
-          - Se modal estiver aberto, enviar a função para fechar (closeModal) 
-          - Enviar a cor para o input e p/ o seu valor
-        */}
-        {IsModalRecoverOpen ? <RecoverPassword closeModalRecover={closeModalRecover} bgColorG={bgColorG} inputValueColor={inputValueColor} /> : null}
+        {IsModalRecoverOpen ? <RecoverPassword closeModalRecover={closeModalRecover} /> : null}
         
         <Routes>
-          <Route path="/" element={<Home svgColor={svgColor} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/equipe" element={<Equipe />} />
         </Routes>

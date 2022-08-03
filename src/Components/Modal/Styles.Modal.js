@@ -28,10 +28,23 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    
+    h1{
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
     @media screen and (max-height: 800px) {
       overflow-y: scroll;
       overflow-x: hidden;
       padding: 1rem;
+
+      h1{
+        font-size: 1rem;
+      }
+    }
+    @media screen and (max-height: 700px) {
+      max-height: 25rem;
     }
     p {
       color: white;
@@ -58,6 +71,9 @@ export const Container = styled.div`
     p {
       font-size: 0.65rem;
     }
+    form h1{
+      font-size: 0.9rem;
+    }
   }
 
   @media only screen and (min-width: 551px) and (max-width: 700px) {
@@ -67,6 +83,9 @@ export const Container = styled.div`
     }
     p {
       font-size: 0.65rem;
+    }
+    form h1{
+      font-size: 1.2rem;
     }
   }
 `;
@@ -94,6 +113,18 @@ export const ContainerReg = styled.div`
       max-height: 25rem;
       padding-right: 1.2rem;
       margin-left: 1.2rem;
+      overflow-x: hidden;
+    }
+
+    @media screen and (min-height: 680px) and (max-height: 700px) {
+      max-height: 25rem;
+      overflow-x: hidden;
+    }
+
+    @media screen and (max-width: 300px) {
+      overflow-x: hidden;
+      padding: 0;
+      margin: auto;
     }
 
     aside {
@@ -109,6 +140,15 @@ export const ContainerReg = styled.div`
         max-height: 25rem;
         padding-right: 1.2rem;
         margin-left: 1.2rem;
+        overflow-x: hidden;
+      }
+      @media screen and (min-height: 680px) and (max-height: 700px) {
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 15rem;
+        padding-right: 1.2rem;
+        margin-left: 1.2rem;
+        overflow-x: hidden;
       }
     }
 
