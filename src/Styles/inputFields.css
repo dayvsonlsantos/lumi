@@ -25,6 +25,7 @@ span.span_inputFields {
 
 input.inputFields {
   margin: 1rem 0;
+  width: 100%;
   border: none;
   border-radius: 12px;
   padding: 0.7rem 1rem;
@@ -32,8 +33,7 @@ input.inputFields {
 }
 
 input.inputFields:focus-visible {
-  outline: none;
-  
+  outline: none;  
 }
 
 input.inputFields:invalid[focused="true"] ~ span {

@@ -211,7 +211,7 @@ input[type="number"] {
   .backdrop .modal {
     width: 450px;
   }
-}
+} //
 
 @media screen and (max-height: 800px) {
   .backdrop {
@@ -250,30 +250,30 @@ input[type="number"] {
       width: 7rem;
       padding: 0.5rem 3rem;
       font-size: 0.7rem;
-    }
+    }//
     p {
       font-size: 0.7rem;
-    }
+    }//
     .inputResponsiv {
       padding: 0.4rem 0.5rem;
       margin: 0.6rem 0;
-    }
-  }
-}
+    }//
+  }//
+}//
 
 @media only screen and (max-width: 550px) {
   .backdrop .modal {
-    min-width: 80%;
+    min-width: 80%;//
 
     .header_form .registerTitle {
       font-size: 0.9rem;
     }
     h1 {
       font-size: 1rem;
-    }
+    }//
     label {
       font-size: 0.8rem;
-    }
+    }//
     .esqueciasenha {
       margin-bottom: 0;
       font-size: 0.65rem;
@@ -281,15 +281,15 @@ input[type="number"] {
     .inputResponsiv {
       padding: 0.4rem 0.5rem;
       margin: 0.6rem 0;
-    }
+    }//
     .submit-btn {
       width: 5rem;
       padding: 0.5rem 3rem;
       font-size: 0.65rem;
-    }
+    }//
     p {
       font-size: 0.65rem;
-    }
+    }//
     .change-page-btn {
       font-size: 0.65rem;
     }

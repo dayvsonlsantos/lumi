@@ -5,10 +5,8 @@ import React, { useState } from "react";
 //Icones
 import { CgClose } from "react-icons/cg";
 
-
-import { ModalDiv, Submit } from "../../../themes/LocalStyles";
-
 import InputFieldCP from "./InputFieldCP/InputFieldCP";
+import { Backdrop, Container, Form, FormTop, CloseButton, Submit } from "../../Modal/Styles.Modal";
 
 function ChangePassword({ closeModalCP }) {
   
@@ -87,16 +85,17 @@ function ChangePassword({ closeModalCP }) {
     
       
       /* Css da página: localStyles.scss */
-    <div className="backdrop">
-        <ModalDiv className="modal"> 
+    <Backdrop>
+        <Container> 
             <form onSubmit={handleSubmit}>
-                <div className="header_form"> 
-                <h1 className="h1_modalFP">Mudar a senha</h1>
-                <button className="close-modal-btn" onClick={closeModalCP}> 
-                    <CgClose />
-                </button>
-                </div>
-                <div className="recoverInput">
+                <FormTop> 
+                    <h1>Mudar a senha</h1>
+                    <CloseButton onClick={closeModalCP}> 
+                        <CgClose />
+                    </CloseButton>
+                </FormTop>
+
+                
                 {inputs.map((input) => (
                     <InputFieldCP
                     key={input.id}
@@ -105,11 +104,11 @@ function ChangePassword({ closeModalCP }) {
                     onChange={onChange}
                     />
                 ))}
-                </div>
-                <Submit className="submit-btn">Enviar</Submit>
+                
+                <Submit>Enviar</Submit>
             </form>
-        </ModalDiv>
-    </div>
+        </Container>
+    </Backdrop>
   );
 }
 
