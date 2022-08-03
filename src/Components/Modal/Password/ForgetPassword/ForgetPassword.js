@@ -60,8 +60,6 @@ function ForgetPassword({ closeModalPass, openModalCode }) {
 
   return (
     
-      
-      /* Css da página: localStyles.scss */
     <Backdrop>
         <Container> 
             <form onSubmit={handleSubmit}>

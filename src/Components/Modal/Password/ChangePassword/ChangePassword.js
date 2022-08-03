@@ -82,7 +82,6 @@ function ChangePassword({ closeModalCP }) {
   return (
     
       
-      /* Css da página: localStyles.scss */
     <Backdrop>
         <Container> 
             <form onSubmit={handleSubmit}>

@@ -59,7 +59,7 @@ function RecoverPassword({ closeModalRecover }) {
   // -----------------------------------------------------------------------
 
   return (
-    /* Css da página: localStyles.scss */
+
     <Backdrop>
       <Container>
         <form onSubmit={handleSubmit}>

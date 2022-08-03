@@ -66,7 +66,6 @@ function LoginModal({ setRegisterForm, closeModalSign, openModalPass }) {
   // -----------------------------------------------------------------------
 
   return (
-    /* Css da página: localStyles.scss */
 
     <Container>
       <form onSubmit={handleSubmit}>
