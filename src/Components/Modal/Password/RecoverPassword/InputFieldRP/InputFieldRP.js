@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { InputGroup } from "../../../Modal/Styles.Modal";
+import { InputGroup } from "../../../Styles.Modal";
 
-const InputFieldCP = (props) => {
+const InputFieldRP = (props) => {
   const [focused, setFocused] = useState(false);
 
   // Recebendo as props
@@ -53,4 +53,4 @@ const InputFieldCP = (props) => {
   );
 };
 
-export default InputFieldCP;
+export default InputFieldRP;

@@ -7,7 +7,7 @@ import {
   CloseButton,
   Submit,
   ChangePage,
-} from "../Styles.Modal";
+} from "../../Styles.Modal";
 
 function RegisterModal({ setLoginForm, closeModalSign }) {
   /*

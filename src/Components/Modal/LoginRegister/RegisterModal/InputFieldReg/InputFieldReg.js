@@ -1,6 +1,6 @@
 import { useState } from "react";
-import {InputToggle} from "../../../ToggleButton/ToggleButton"
-import { InputGroup, Toggle } from "../../Styles.Modal";
+import {InputToggle} from "../../../../ToggleButton/ToggleButton"
+import { InputGroup, Toggle } from "../../../Styles.Modal";
 
 const FormInput = (props) => {
   

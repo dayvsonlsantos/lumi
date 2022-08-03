@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import RegisterModal from "./RegisterModal/RegisterModal";
 import LoginModal from "./LoginModal/LoginModal";
-import { Backdrop } from "./Styles.Modal";
+import { Backdrop } from "../Styles.Modal";
 
 function LoginRegister({ closeModalSign, openModalPass }) {
   

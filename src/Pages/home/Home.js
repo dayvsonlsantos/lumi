@@ -1,4 +1,4 @@
-import ServiceModalLine from "../../Components/Modal/CardService/CardLine/CardLine";
+import ServiceModalLine from "../../Components/CardService/CardLine/CardLine";
 import {Main} from "./Style.Home";
 
 function Home(){

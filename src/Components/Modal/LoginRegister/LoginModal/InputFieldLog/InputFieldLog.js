@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { InputGroup } from "../../Styles.Modal";
+import { InputGroup } from "../../../Styles.Modal";
 
 const FormLoginInput = (props) => {
   const [focused, setFocused] = useState(false);

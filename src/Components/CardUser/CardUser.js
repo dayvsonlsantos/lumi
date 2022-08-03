@@ -17,7 +17,7 @@ import {
   LabelToggle,
   Submit,
 } from "./Style.CardUser";
-import ChangePassword from "./ChangePassword/ChangePassword";
+import ChangePassword from "../Modal/Password/ChangePassword/ChangePassword";
 
 
 //Dados

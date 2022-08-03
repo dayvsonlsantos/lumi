@@ -1,22 +1,14 @@
 import React, { useState } from "react";
 import { CgClose } from "react-icons/cg";
-import {
-  Backdrop,
-  Container,
-  FormTop,
-  CloseButton,
-  Submit,
-} from "../Styles.Modal";
-import InputFieldCode from "./InputFieldCode/InputFieldCode";
+import { Backdrop, Container, FormTop, CloseButton, Submit } from "../../Styles.Modal";
+import InputFieldRP from "./InputFieldRP/InputFieldRP";
 
-function CodeRecoverPW({
-  closeModalCode,
-  openModalRecover,
-}) {
+function RecoverPassword({ closeModalRecover }) {
   //Verificação dos campos do formulário:
 
   const [values, setValues] = useState({
-    codeRecover: "",
+    passwordRecover: "",
+    confirmPasswordRecover: "",
   });
 
   // -----------------------------------------------------------------------
@@ -25,12 +17,26 @@ function CodeRecoverPW({
 
   const inputs = [
     {
-      id: "codeRecover",
-      type: "text",
-      name: "codeRecover",
-      placeholder: "Informe o código enviado em seu e-mail",
-      label: "Código",
+      id: "passwordRecover",
+      type: "password",
+      name: "passwordRecover",
+      placeholder: "Informe uma nova senha",
+      errorMessage:
+        "A senha deve conter no mínimo 8-16 caracteres, número, letras maiúsculas e/ou minúsculas e caractere especial",
+      label: "Nova senha",
       required: true,
+      pattern:
+        "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$",
+    },
+    {
+      id: "confirmPasswordRecover",
+      type: "password",
+      name: "confirmPasswordRecover",
+      placeholder: "Confirme a nova sua senha",
+      errorMessage: "As senhas não são iguais!",
+      label: "Confirmar nova senha",
+      required: true,
+      pattern: values.passwordRecover,
     },
   ];
   // -----------------------------------------------------------------------
@@ -58,14 +64,14 @@ function CodeRecoverPW({
       <Container>
         <form onSubmit={handleSubmit}>
           <FormTop>
-            <h1>Recuperar a senha</h1>
-            <CloseButton onClick={closeModalCode}>
+            <h1>Criar nova senha</h1>
+            <CloseButton onClick={closeModalRecover}>
               <CgClose />
             </CloseButton>
           </FormTop>
 
           {inputs.map((input) => (
-            <InputFieldCode
+            <InputFieldRP
               key={input.id}
               {...input}
               value={values[input.name]}
@@ -73,7 +79,6 @@ function CodeRecoverPW({
             />
           ))}
 
-          <p onClick={openModalRecover}>Clicar</p>
           <Submit>Enviar</Submit>
         </form>
       </Container>
@@ -81,4 +86,4 @@ function CodeRecoverPW({
   );
 }
 
-export default CodeRecoverPW;
+export default RecoverPassword;

@@ -24,7 +24,7 @@ import {
 } from "./Style.Navbar";
 
 //Componente Menu Mobile
-import MenuMobile from "../MenuMobile/MenuMobile";
+import MenuMobile from "../NavbarMobile/NavbarMobile";
 
 
 function Header({ themeToggler, imgsrc, themebutton, openModalSign }) {

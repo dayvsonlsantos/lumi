@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, MenuItems, Icon } from "./Style.MenuMobile";
+import { Container, MenuItems, Icon } from "./Style.NavbarMobile";
 
 //Icones dos botões
 import { CgClose } from "react-icons/cg";

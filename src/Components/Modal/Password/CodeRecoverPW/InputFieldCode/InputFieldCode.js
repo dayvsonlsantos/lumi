@@ -1,4 +1,4 @@
-import { InputGroup } from "../../Styles.Modal";
+import { InputGroup } from "../../../Styles.Modal";
 
 const InputFieldCode = (props) => {
 

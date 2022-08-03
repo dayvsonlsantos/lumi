@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import InputFieldFP from "./InputFieldFP/InputFieldFP";
-import { Backdrop, Container, FormTop, CloseButton, Submit } from "../Styles.Modal";
+import { Backdrop, Container, FormTop, CloseButton, Submit } from "../../Styles.Modal";
 
 function ForgetPassword({ closeModalPass, openModalCode }) {
   

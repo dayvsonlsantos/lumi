@@ -9,7 +9,7 @@ import {
   Submit,
   Esqueciasenha,
   ChangePage,
-} from "../Styles.Modal";
+} from "../../Styles.Modal";
 
 function LoginModal({ setRegisterForm, closeModalSign, openModalPass }) {
   //Verificação dos campos do formulário:

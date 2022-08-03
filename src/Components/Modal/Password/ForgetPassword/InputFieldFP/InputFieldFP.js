@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { InputGroup } from "../../Styles.Modal";
+import { InputGroup } from "../../../Styles.Modal";
 
 const InputFieldFP = (props) => {
   const [focused, setFocused] = useState(false);

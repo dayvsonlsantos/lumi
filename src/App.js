@@ -22,10 +22,10 @@ import logolight from "./Assets/logo/icon_lumi.svg";
 import logodark from "./Assets/logo/icon_lumi_dark.svg";
 
 //Modal
-import LoginRegister from "./Components/Modal/LoginRegister";
-import ForgetPassword from "./Components/Modal/ForgetPassword/ForgetPassword";
-import CodeRecoverPW from "./Components/Modal/CodeRecoverPW/CodeRecoverPW";
-import RecoverPassword from "./Components/Modal/RecoverPassword/RecoverPassword";
+import LoginRegister from "./Components/Modal/LoginRegister/LoginRegister";
+import ForgetPassword from "./Components/Modal/Password/ForgetPassword/ForgetPassword";
+import CodeRecoverPW from "./Components/Modal/Password/CodeRecoverPW/CodeRecoverPW";
+import RecoverPassword from "./Components/Modal/Password/RecoverPassword/RecoverPassword";
 
 function App() {
   
