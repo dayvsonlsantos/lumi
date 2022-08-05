@@ -1,10 +1,10 @@
-import ServiceModalLine from "../../Components/CardService/CardLine/CardLine";
+import CardLine from "../../Components/CardService/CardLine/CardLine";
 import {Main} from "./Style.Home";
 
 function Home(){
     return(
-        <Main>
-            <ServiceModalLine/>
+        <Main style={{flexDirection: "column"}}>
+            <CardLine/>
         </Main>
     )
 }
