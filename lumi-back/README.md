@@ -135,7 +135,7 @@ Se você deseja visualizar a organização do projeto em nosso Trello, você pod
 
 ## ![link](https://user-images.githubusercontent.com/102249811/184334676-ed902c74-e1fc-44a8-828b-4c3eb1490767.png) Licença
 
-O projeto se encontra sob a licença [GPLv3](https://github.com/Start-Lumos/lumi-front/blob/main/license).
+O projeto se encontra sob a licença [GPLv3](https://github.com/dayvsonlsantos/lumi/blob/main/lumi-back/license.md).
 
 Desenvolvido pela equipe Lumos 💜
 
